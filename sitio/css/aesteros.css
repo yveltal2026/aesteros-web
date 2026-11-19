@@ -275,7 +275,8 @@ html.anim .ba-p.go .con li:nth-child(2){transition-delay:.25s}html.anim .ba-p.go
 /* ===== Producto (profundo) y Método (claro) ===== */
 html[data-view="producto"] body{background:radial-gradient(900px 640px at 96% -6%,rgba(255,176,0,.26),rgba(255,176,0,0) 70%),radial-gradient(700px 560px at -6% 38%,rgba(255,120,0,.12),rgba(255,120,0,0) 70%),#0B0907;background-attachment:fixed}
 html[data-view="metodo"] body{background:radial-gradient(900px 620px at 96% -8%,rgba(255,176,0,.36),rgba(255,176,0,0) 70%),radial-gradient(760px 560px at -6% 60%,rgba(255,196,60,.3),rgba(255,196,60,0) 70%),#FFF7E6;background-attachment:fixed}
-html[data-view="inicio"] .foot,html[data-view="producto"] .foot{color:rgba(255,247,230,.7);border-color:rgba(255,247,230,.16)}html[data-view="inicio"] .foot .brand,html[data-view="producto"] .foot .brand{color:#FFF7E6}
+html[data-view="producto"] .foot{color:rgba(255,247,230,.7);border-color:rgba(255,247,230,.16)}html[data-view="producto"] .foot .brand{color:#FFF7E6}
+html[data-view="inicio"] .foot{background:#FFF7E6;color:rgba(20,17,12,.74);border-color:rgba(20,17,12,.14)}html[data-view="inicio"] .foot .brand{color:#14110C}
 html[data-view="metodo"] .foot{color:rgba(20,17,12,.7);border-color:rgba(20,17,12,.14)}html[data-view="metodo"] .foot .brand{color:#14110C}
 .prod{--ink:#FFF7E6;--paper:#0B0907;--cafe:#D9935A;--mut:rgba(255,247,230,.74);--line:rgba(255,247,230,.18);--glass:rgba(255,247,230,.06);--glass-b:rgba(255,247,230,.16);--soft:rgba(255,247,230,.09);--shadow:0 26px 54px -30px rgba(0,0,0,.9);color:var(--ink);color-scheme:dark}
 .met{--ink:#14110C;--paper:#FFF7E6;--cafe:#7A3E12;--mut:rgba(20,17,12,.7);--line:rgba(20,17,12,.14);--glass:rgba(255,255,255,.62);--glass-b:rgba(255,255,255,.95);--soft:rgba(20,17,12,.06);--shadow:0 26px 54px -30px rgba(150,96,0,.45);color:var(--ink);color-scheme:light}
