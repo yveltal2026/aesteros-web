@@ -361,7 +361,7 @@ html=f'''<!DOCTYPE html>
 {VIEWS2}
 </main>
 <footer class="foot"><span class="brand">{logo("f",20)}</span><span>Percepción, comparada.</span><span class="flk"><a href="#privacidad">Privacidad</a><a href="#terminos">Términos</a><a href="#camara">Uso de cámara</a></span><span class="fine">Maqueta del sitio. Pantallas con datos de ejemplo.</span></footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script>{JS}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script>{JS}</script>
 </body>
 </html>'''
 for out_p in (os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','sitio','index.html'), os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','index.html')):
