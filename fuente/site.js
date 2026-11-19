@@ -19,7 +19,7 @@ function show(name,target){
   document.documentElement.dataset.view=name;document.documentElement.dataset.mode=MAIN.indexOf(name)<0?'mas':'main';var cur=document.getElementById('v-'+name).dataset.nav||name;setMeta(name);if(window.AE&&AE.view)AE.view(name);
   document.querySelectorAll('.dock nav a').forEach(function(a){if(a.dataset.v===cur)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   var el=target&&document.getElementById(target);
-  if(el){if(el.tagName==='DETAILS')el.open=true;el.scrollIntoView({block:'start',behavior:'instant'});var f=el.querySelector('input');if(target==='espera'){var c=document.getElementById('f-espera');if(c)c.checked=true}}
+  if(el){if(el.tagName==='DETAILS')el.open=true;el.scrollIntoView({block:'start',behavior:'instant'});var f=el.querySelector('input');if(target==='espera'){var c=document.getElementById('f-espera');if(c){c.checked=true;c.dispatchEvent(new Event('change'))}}}
   else window.scrollTo({top:0,behavior:'instant'});
 }
 function curView(){
