@@ -282,8 +282,16 @@ with open(os.path.join(ROOT_DIR,'buscadores.csv'),encoding='utf-8-sig') as _f:
 META_MAP={r['v']:{'p':r['p'],'u':r['u'],'t':r['t'],'d':r['d']} for r in ROWS}
 P2V_MAP={r['p']:r['v'] for r in ROWS}
 
+import hashlib
 CSS=open('site.css').read()+open('home.css').read()
 JS='window.__AE_META__='+json.dumps(META_MAP,ensure_ascii=False)+';window.__AE_P2V__='+json.dumps(P2V_MAP,ensure_ascii=False)+';\n'+open('site.js').read()+open('home.js').read().replace('__CURV__',CURV)
+CSS_H=hashlib.sha256(CSS.encode()).hexdigest()[:8]
+JS_H=hashlib.sha256(JS.encode()).hexdigest()[:8]
+for base_dir in (ROOT_DIR, os.path.join(ROOT_DIR,'sitio')):
+    os.makedirs(os.path.join(base_dir,'css'), exist_ok=True)
+    os.makedirs(os.path.join(base_dir,'js'), exist_ok=True)
+    open(os.path.join(base_dir,'css','aesteros.css'),'w').write(CSS)
+    open(os.path.join(base_dir,'js','aesteros.js'),'w').write(JS)
 
 html=f'''<!DOCTYPE html>
 <html lang="es" data-view="inicio" data-mode="main">
@@ -295,7 +303,7 @@ html=f'''<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<link rel="stylesheet" href="css/aesteros.css?v={CSS_H}">
 </head>
 <body>
 <a class="skip" href="#contenido">Ir al contenido</a>
@@ -319,7 +327,7 @@ html=f'''<!DOCTYPE html>
 <span class="num">01</span><h2>¿Qué miran?</h2>
 <div class="steps-tx"><p class="st">Un anuncio. Cincuenta y dos personas lo ven cinco segundos desde su casa, con la cámara de su equipo.</p><p class="st">Cada punto es un instante de mirada. Donde se juntan, está la atención.</p><p class="st">Y este es el orden: primero el titular, luego la botella. El precio, casi nadie.</p></div>
 <span class="seal on-d"><i class="d s"></i>Medido con personas</span></div>
-<div class="vis"><div class="ad" id="ad"><img src="img/anuncio.jpg" alt="Anuncio de ejemplo de agua mineral Brisa con un toque de limón" width="1400" height="875">
+<div class="vis"><div class="ad" id="ad"><img src="img/anuncio.jpg" srcset="img/anuncio-700.jpg 700w, img/anuncio.jpg 1400w" sizes="(max-width: 820px) 100vw, 55vw" alt="Anuncio de ejemplo de agua mineral Brisa con un toque de limón" loading="lazy" width="1400" height="875">
 <span class="heatcss" aria-hidden="true"></span><svg class="path" viewBox="0 0 160 100" aria-hidden="true"><polyline pathLength="1" points="41.6,36 131.2,50 27.2,71"/><g class="nodes"><g><circle cx="41.6" cy="36" r="5"/><text x="41.6" y="38">1</text></g><g><circle cx="131.2" cy="50" r="5"/><text x="131.2" y="52">2</text></g><g><circle cx="27.2" cy="71" r="5"/><text x="27.2" y="73">3</text></g></g></svg>
 <span class="tag" style="left:26%;top:17%">Titular: 52 % lo vio primero</span><span class="tag" style="left:80%;top:6%">Producto: 24 %</span><span class="tag low" style="left:58.5%;top:91%">Precio: 5 %</span></div></div></div></section>
 
@@ -343,8 +351,8 @@ html=f'''<!DOCTYPE html>
 
 <div class="lite">
 <section class="band prueba" id="prueba"><div class="hd"><span class="eyebrow">Veinte segundos</span><h2>Pruébalo tú</h2><p>Dos tareas en miniatura para sentir cómo se mide. Nada se guarda ni sale de esta página.</p></div>
-<div class="demos"><div class="demo" id="demo-heat"><div class="dh"><b>Mira este anuncio</b><span>Mueve el cursor o el dedo sobre él durante cinco segundos, como si fuera tu mirada.</span></div>
-<div class="canvas-wrap"><img src="img/anuncio.jpg" alt="Anuncio de ejemplo de agua mineral Brisa" width="1400" height="875"><canvas id="heat" aria-label="Mapa de calor de tu cursor"></canvas><button class="btn sm start" type="button" id="heat-go">Empezar</button></div>
+<div class="demos"><div class="demo" id="demo-heat"><div class="dh"><b>Mira este anuncio</b><span>Mueve el cursor, el dedo o las flechas sobre él durante cinco segundos, como si fuera tu mirada.</span></div>
+<div class="canvas-wrap" tabindex="0" role="application" aria-label="Área interactiva del anuncio para simular mirada con cursor o flechas"><img src="img/anuncio.jpg" srcset="img/anuncio-700.jpg 700w, img/anuncio.jpg 1400w" sizes="(max-width: 820px) 100vw, 45vw" alt="Anuncio de ejemplo de agua mineral Brisa" loading="lazy" width="1400" height="875"><canvas id="heat" aria-label="Mapa de calor de tu cursor"></canvas><button class="btn sm start" type="button" id="heat-go">Empezar</button></div>
 <div class="pbar" aria-hidden="true"><i id="heat-bar"></i></div><p class="out" id="heat-out" role="status" aria-live="polite">Aquí aparece tu mapa.</p></div>
 <div class="demo" id="demo-rt"><div class="dh"><b>Clasifica seis palabras</b><span>¿Natural o artificial? Lo más rápido que puedas. En teclado: E y I.</span></div>
 <div class="rt"><span class="rt-word" id="rt-word" aria-live="polite">Lista</span><div class="rt-btns"><button type="button" class="btn ghost" id="rt-l" disabled><kbd>E</kbd>Natural</button><button type="button" class="btn ghost" id="rt-r" disabled><kbd>I</kbd>Artificial</button></div><button class="btn sm" type="button" id="rt-go">Empezar</button></div>
@@ -377,7 +385,7 @@ html=f'''<!DOCTYPE html>
 <div class="chips" role="group" aria-label="Preguntas de ejemplo"><button type="button" class="chip">¿Mi empaque se entiende en cinco segundos?</button><button type="button" class="chip">¿Cuál de mis dos anuncios funciona mejor?</button><button type="button" class="chip">¿Mi marca se asocia con lo que quiero?</button><button type="button" class="chip">¿Cuánto pagarían por esto?</button><button type="button" class="chip">¿En qué paso se van de mi sitio?</button><button type="button" class="chip">¿Cómo enseño neuromarketing sin laboratorio?</button></div>
 <div class="stage" aria-live="polite"><span class="sdot" aria-hidden="true"></span><p class="sq foc" id="sq">Elige una pregunta o escribe la tuya.</p></div>
 <p class="note" id="espera">En media hora te la respondemos con la plataforma y un ejemplo de tu área. ¿Prefieres esperar al lanzamiento? Marca «Solo avísenme».</p></div>
-<form class="form" id="f-demo" novalidate><label for="f-preg">Lo que quiero saber<input id="f-preg" name="pregunta" placeholder="Escribe tu pregunta" autocomplete="off"></label><label for="f-nombre">Nombre<input id="f-nombre" name="nombre" autocomplete="name" required></label><label for="f-correo">Correo de trabajo o institucional<input id="f-correo" name="correo" type="email" autocomplete="email" required></label><label for="f-org">Universidad o empresa<input id="f-org" name="org" autocomplete="organization"></label>
+<form class="form" id="f-demo" novalidate><label for="f-preg">Lo que quiero saber<input id="f-preg" name="pregunta" placeholder="Escribe tu pregunta" autocomplete="off"></label><label for="f-nombre">Nombre (requerido)<input id="f-nombre" name="nombre" autocomplete="name" required></label><label for="f-correo">Correo de trabajo o institucional (requerido)<input id="f-correo" name="correo" type="email" autocomplete="email" required></label><label for="f-org">Universidad o empresa<input id="f-org" name="org" autocomplete="organization"></label>
 <fieldset><legend>Vengo por</legend><label class="rad"><input type="radio" name="tipo" id="f-t1" value="u" checked>Una universidad</label><label class="rad"><input type="radio" name="tipo" id="f-t2" value="e">Una empresa o agencia</label></fieldset>
 <label class="rad"><input type="checkbox" id="f-espera" name="espera">Solo avísenme cuando abra el registro y de cada herramienta nueva</label>
 <button class="btn" type="submit">Pedir una demostración</button><p class="msg" id="f-msg" role="status" aria-live="polite"></p></form></div></section>
@@ -390,7 +398,7 @@ html=f'''<!DOCTYPE html>
 {VIEWS2}
 </main>
 <footer class="foot"><span class="brand">{logo("f",20)}</span><span>Percepción, comparada.</span><span class="flk"><a href="#privacidad">Privacidad</a><a href="#terminos">Términos</a><a href="#camara">Uso de cámara</a></span><span class="fine">Maqueta del sitio. Pantallas con datos de ejemplo.</span></footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script>{JS}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="js/aesteros.js?v={JS_H}"></script>
 </body>
 </html>'''
 
