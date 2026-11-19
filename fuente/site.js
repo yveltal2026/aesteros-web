@@ -33,9 +33,10 @@ function route(){show(curView())}
 document.addEventListener('click',function(e){var a=e.target.closest('a[data-go],a[href^="#"]');if(!a)return;var hr=a.getAttribute('href')||'';if(hr.charAt(0)!=='#')return;var name=hr.slice(1);if(V.indexOf(name)<0)return;e.preventDefault();var m=META[name];if(m&&m.p&&location.protocol!=='file:'){if(location.pathname!==m.p||location.hash){history.pushState({v:name},'',m.p)}}else if(location.hash!=='#'+name){history.pushState({v:name},'','#'+name)}show(name,a.dataset.go);window.dispatchEvent(new Event('hashchange'))});
 window.addEventListener('hashchange',route);window.addEventListener('popstate',route);route();
 var f=document.getElementById('f-demo');
+[document.getElementById('f-nombre'),document.getElementById('f-correo')].forEach(function(el){if(!el)return;el.addEventListener('input',function(){el.removeAttribute('aria-invalid');var m=document.getElementById('f-msg');if(m)m.textContent=''})});
 f.addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('f-msg'),n=document.getElementById('f-nombre'),c=document.getElementById('f-correo');
-  if(!n.value.trim()){m.textContent='Falta tu nombre.';n.focus();return}
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c.value)){m.textContent='Revisa el correo: falta algo, como la arroba o el dominio.';c.focus();return}
+  if(!n.value.trim()){n.setAttribute('aria-invalid','true');m.textContent='Falta tu nombre.';n.focus();return}
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(c.value)){c.setAttribute('aria-invalid','true');m.textContent='Revisa el correo: falta algo, como la arroba o el dominio.';c.focus();return}
   m.textContent='Esto es una maqueta: el formulario todavía no envía nada. Tus datos no salieron de esta página.'});
 })();
 

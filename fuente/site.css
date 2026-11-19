@@ -5,11 +5,13 @@
 --display:"Archivo",system-ui,sans-serif;--body:"Archivo",system-ui,sans-serif;color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#FFF7E6;--paper:#0B0907;--cafe:#D9935A;--mut:rgba(255,247,230,.7);--line:rgba(255,247,230,.16);--glass:rgba(255,247,230,.07);--glass-b:rgba(255,247,230,.16);--soft:rgba(255,247,230,.08);--shadow:0 26px 54px -30px rgba(0,0,0,.9);--bg:radial-gradient(900px 640px at 92% -6%,rgba(255,176,0,.3),rgba(255,176,0,0) 70%),radial-gradient(760px 560px at -4% 60%,rgba(255,106,0,.18),rgba(255,106,0,0) 70%),#0B0907;color-scheme:dark}}
 :root[data-theme="dark"]{--ink:#FFF7E6;--paper:#0B0907;--cafe:#D9935A;--mut:rgba(255,247,230,.7);--line:rgba(255,247,230,.16);--glass:rgba(255,247,230,.07);--glass-b:rgba(255,247,230,.16);--soft:rgba(255,247,230,.08);--shadow:0 26px 54px -30px rgba(0,0,0,.9);--bg:radial-gradient(900px 640px at 92% -6%,rgba(255,176,0,.3),rgba(255,176,0,0) 70%),radial-gradient(760px 560px at -4% 60%,rgba(255,106,0,.18),rgba(255,106,0,0) 70%),#0B0907;color-scheme:dark}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scrollbar-color:rgba(255,176,0,.45) transparent}
+::selection{background:rgba(255,176,0,.36);color:var(--ink)}
 body{margin:0;font-family:var(--body);font-size:17px;line-height:1.5;color:var(--ink);background:var(--bg);background-color:var(--paper);background-attachment:fixed;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
 a{color:inherit}img{max-width:100%;height:auto;display:block}
-.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:9;padding:10px 14px;background:var(--ink);color:var(--paper);border-radius:10px}
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;left:-999px}.skip:focus{left:16px;top:16px;z-index:40;padding:10px 14px;background:var(--ink);color:var(--paper);border-radius:10px}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+input,textarea{caret-color:var(--amber)}
 h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.03em;line-height:1.04}
 h1{font-size:clamp(2.6rem,1.6rem + 4.4vw,5.4rem);font-weight:800;font-stretch:112%}
 h2{font-size:clamp(1.8rem,1.3rem + 2vw,3rem);font-weight:800;font-stretch:108%}

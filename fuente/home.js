@@ -32,7 +32,7 @@ function prog(el){var r=el.getBoundingClientRect(),t=r.height-innerHeight;return
     var o=A.map(function(a,k){return [a[0],Math.round(aoi.v[k]/aoi.t*100)]}).sort(function(a,b){return b[1]-a[1]});
     var tx=o[0][1]>0?'Tu cursor pasó más tiempo en <b>'+o[0][0]+' ('+o[0][1]+' %)</b>'+(o[1][1]>0?' y en '+o[1][0]+' ('+o[1][1]+' %)':'')+'.':'Tu cursor casi no tocó las áreas del anuncio.';
     out.innerHTML=tx+' En el estudio de ejemplo, la mirada de 52 personas fue primero al titular. Aquí seguimos tu cursor; en un estudio real, la cámara estima la mirada.';AE.blip&&AE.blip('ok')}
-  go.addEventListener('click',function(){I=new Float32Array(W*H);aoi={t:0,v:[0,0,0,0,0]};px=py=-1;run=true;go.hidden=true;wrap.classList.add('run');out.textContent='Muévete sobre el anuncio…';t0=last=performance.now();requestAnimationFrame(tick)});
+  go.addEventListener('click',function(){I=new Float32Array(W*H);aoi={t:0,v:[0,0,0,0,0]};px=py=-1;run=true;go.hidden=true;wrap.classList.add('run');out.textContent='Mueve el cursor o el dedo sobre el anuncio…';t0=last=performance.now();requestAnimationFrame(tick)});
   wrap.addEventListener('pointermove',move);wrap.addEventListener('pointerdown',move);
 })();
 (function(){
