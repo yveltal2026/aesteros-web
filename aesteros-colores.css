@@ -1,0 +1,27 @@
+:root {
+  --aesteros-negro: #000000;
+  --aesteros-crema: #FFF7E6;
+  --aesteros-ambar: #FFB000;
+  --aesteros-naranja: #FF6A00;
+  --aesteros-durazno: #FFB89A;
+  --aesteros-arena: #EFE3CB;
+  --aesteros-grafito: #5C564B;
+  --aesteros-fuente: "Archivo", sans-serif;
+  --aesteros-calor-1: #FFF7E6;
+  --aesteros-calor-2: #FFE4B3;
+  --aesteros-calor-3: #FFCB66;
+  --aesteros-calor-4: #FFB000;
+  --aesteros-calor-5: #FF8C00;
+  --aesteros-calor-6: #FF6A00;
+  --aesteros-calor-7: #D64B00;
+  --aesteros-calor-8: #8A2C00;
+  --mov-micro: 160ms;
+  --mov-corto: 360ms;
+  --mov-medio: 720ms;
+  --mov-largo: 1400ms;
+  --mov-escena: 2400ms;
+  --curva-enfocar: cubic-bezier(.16, .84, .24, 1);
+  --curva-desenfocar: cubic-bezier(.6, 0, .84, .2);
+  --curva-trasladar: cubic-bezier(.65, 0, .35, 1);
+  --desenfoque-inicial: 16px;
+}
