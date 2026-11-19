@@ -1,10 +1,18 @@
-import os,re,sys
+import os,re,sys,csv,json
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 import ilus_lib as L
+import iconos_lib as I
+def ic(k,uid,sz=20): return I.ic(k,uid,sz)
 def logo(uid,h=24):
     s=open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'aesteros-logo-claro.svg')).read()
     s=re.sub(r'<svg [^>]*>',f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="80 100 1200 170" role="img" aria-label="aesteros" style="height:{h}px;width:auto;display:block">',s,1)
     return s.replace('#000000','currentColor').replace('id="g"',f'id="lg{uid}"').replace('url(#g)',f'url(#lg{uid})')
+def ed_logo(ed,uid,h=24):
+    p=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','logo','ediciones',f'aesteros-{ed}-claro.svg')
+    s=open(p).read()
+    vb=re.search(r'viewBox="([^"]+)"',s).group(1)
+    s=re.sub(r'<svg [^>]*>',f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" role="img" aria-label="Aesteros {ed.capitalize()}" style="height:{h}px;width:auto;display:block">',s,1)
+    return s.replace('#000000','currentColor').replace('id="e"',f'id="ed_{ed}_{uid}"').replace('url(#e)',f'url(#ed_{ed}_{uid})')
 def il(fn,uid,w=120): return re.sub(r'<svg class="ilsvg"',f'<svg class="il" style="width:{w}px"',fn().svg(uid))
 def shot(k,alt,cls=''): return f'<figure class="shot {cls}"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/{k}.jpg" alt="{alt}" loading="lazy" width="1200" height="700"></figure>'
 def seal(k): return {'m':'<span class="seal"><i class="d s"></i>Medido</span>','e':'<span class="seal"><i class="d f"></i>Estimado</span>','o':'<span class="seal"><i class="d h"></i>Modelado</span>'}[k]
@@ -56,7 +64,7 @@ def au(u,e,a): return f'<span data-au="u">{u}</span><span data-au="e">{e}</span>
 SEALT={'m':'Medido','e':'Estimado','o':'Modelado'}
 _dots=''.join('<i class="%s" style="--d:%.2fs"></i>'%('ok' if n<52 else ('ex' if n<57 else 'no'),n*.025) for n in range(60))
 _acc=''.join(f'<details class="acc" id="t-{k}"><summary><span class="am">{mini(k,"p"+k)}</span><span class="an"><em>{q}</em><b>{n}</b></span>{seal(sl)}</summary><div class="ab"><div class="abt"><p class="lead">{d}</p><dl><div><dt>Qué entrega</dt><dd>{g}</dd></div><div><dt>Quién responde</dt><dd>{w}</dd></div></dl></div>{shot(k,alt)}</div></details>' for k,n,q,d,g,w,sl,alt,fn in TOOLS)
-_qs=[('mira','Qué se mira en mi pieza'),('emo','Qué provoca mi video'),('asoc','Con qué se asocia mi marca'),('ab','Cuál de dos versiones gana'),('precio','Cuánto pagarían'),('sitio','Dónde se atoran en mi sitio')]
+_qs=[('mira','Qué se mira en mi pieza','mirada'),('emo','Qué provoca mi video','video'),('asoc','Con qué se asocia mi marca','iat'),('ab','Cuál de dos versiones gana','comparar'),('precio','Cuánto pagarían','encuesta'),('sitio','Dónde se atoran en mi sitio','seo')]
 PROD='<section class="view prod" id="v-producto" data-au="u" hidden>'+f"""
 <div class="phd2"><span class="eyebrow">Producto</span><h1 class="focus">Un estudio,<br>de principio a fin</h1><p class="sub">Sigue a Brisa, una marca de agua mineral de ejemplo, desde la pregunta hasta la decisión. En el camino aparecen las nueve herramientas.</p>
 <div class="ausel" role="group" aria-label="Ver los ejemplos como"><span>Ver como</span><button type="button" data-set="u" aria-pressed="true">Universidad</button><button type="button" data-set="e" aria-pressed="false">Empresa</button><button type="button" data-set="a" aria-pressed="false">Agencia</button></div></div>
@@ -82,10 +90,10 @@ PROD='<section class="view prod" id="v-producto" data-au="u" hidden>'+f"""
 <section class="sp" id="p-5"><div class="spt full" data-rv><span class="num">05 · Decidir</span><h2 class="dec">Brisa sale con el titular arriba, «natural» al frente y el precio en $20.</h2><p class="lead">{au('Tus alumnos entregan esta conclusión con sus propios datos, y saben defender hasta dónde llega.','Llegas a la junta con una recomendación y la evidencia a la vista.','Presentas la ruta ganadora con datos del público del cliente.')}</p></div></section>
 </div></div>
 <section class="arma" id="arma"><div class="hd" data-rv><span class="eyebrow">Arma tu estudio</span><h2>¿Qué quieres saber?</h2><p>Marca una o varias. Te decimos con qué herramientas se responde.</p></div>
-<div class="armab" data-rv><div class="aq" role="group" aria-label="Lo que quieres saber">"""+''.join(f'<button type="button" class="chip" data-q="{k}" aria-pressed="false">{t}</button>' for k,t in _qs)+"""</div>
+<div class="armab" data-rv><div class="aq" role="group" aria-label="Lo que quieres saber">"""+''.join(f'<button type="button" class="chip" data-q="{k}" aria-pressed="false">{ic(ik,"aq_"+k,18)}{t}</button>' for k,t,ik in _qs)+"""</div>
 <div class="ares" id="arma-out" aria-live="polite"><p class="aempty">Tu estudio aparece aquí.</p></div></div></section>
 <section class="nueve"><div class="hd" data-rv><h2>Las nueve, una por una</h2><p>Abre la que te interese. Todas entregan el resultado con su margen de error y su sello.</p></div><div class="accs" data-rv>"""+_acc+"""</div></section>
-"""+f"""<section class="extra" data-rv><div><span class="eyebrow">También incluye</span><h2>Lo que hace falta alrededor de una prueba</h2></div><div class="ex3"><div><b>Laboratorio de calibración</b><span>Mide qué tan exacto es cada equipo y qué tamaño de área puede medir.</span></div><div><b>Calculadora de muestra</b><span>Cuánta gente hace falta, o hasta dónde alcanza la que hay.</span></div><div><b>Proyectos y alumnos</b><span>Estudios ordenados por proyecto, con permisos por persona.</span></div></div></section>
+"""+f"""<section class="extra" data-rv><div><span class="eyebrow">También incluye</span><h2>Lo que hace falta alrededor de una prueba</h2></div><div class="ex3"><div><b class="ex3Title">{ic('calibracion','ex1',20)}Laboratorio de calibración</b><span>Mide qué tan exacto es cada equipo y qué tamaño de área puede medir.</span></div><div><b class="ex3Title">{ic('muestra','ex2',20)}Calculadora de muestra</b><span>Cuánta gente hace falta, o hasta dónde alcanza la que hay.</span></div><div><b class="ex3Title">{ic('alumno','ex3',20)}Proyectos y alumnos</b><span>Estudios ordenados por proyecto, con permisos por persona.</span></div></div></section>
 <section class="pcta" data-rv><h2>Míralo con tu propio caso</h2><div class="cta"><a class="btn" href="#inicio" data-go="demo">Pedir una demostración</a><a class="btn ghost" href="#metodo">Ver cómo medimos</a></div></section>
 </section>"""
 _LIM=[('Mirada con cámara web', 'Qué áreas medianas y grandes se ven, en qué orden y por cuánto tiempo.', 'Si se leyó una letra chica, ni lo que la persona pensó al mirar.'), ('Lectura del rostro', 'Qué hizo la cara en cada segundo: sonrisa, ceño, sorpresa.', 'Lo que la persona sintió. Una sonrisa puede ser de cortesía.'), ('Asociación implícita', 'Hacia dónde se inclina un grupo y con qué fuerza.', 'Nada sobre una persona en particular. Su puntuación cambia de un día a otro.'), ('Atención estimada con IA', 'Qué partes de una pieza atraen por su forma.', 'Si el mensaje se entiende o convence.'), ('Intención de compra', 'Cuál de dos conceptos gusta más.', 'Cuánto se va a vender. Lo declarado suele ser más de lo que se compra.'), ('Índice de fricción', 'Dónde un sitio estorba más que otro.', 'Qué harían usuarios reales: es una simulación a partir de una rúbrica.')]
@@ -129,12 +137,12 @@ EMP='<section class="view dk" id="v-empresas" hidden>'+hero2('Para empresas','Sa
 <section class="mb"><div class="hd" data-rv><h2>Cuatro decisiones que ya no dependen de quién insiste más</h2></div><div class="quad4">{''.join(f'<a class="tc" href="#producto" data-go="t-{k}" data-rv>{mini(k,"e"+k)}<b>{t}</b><span>{d}</span></a>' for k,t,d in [('ocular','¿Se entiende el empaque?','Qué se ve primero y qué nunca se ve.'),('variantes','¿Cuál de los dos anuncios?','Dos versiones frente a frente.'),('encuesta','¿A qué precio?','El rango en que el precio no estorba.'),('web','¿Dónde se van del sitio?','El paso que más pesa en el abandono.')])}</div></section>
 <section class="mb duo"><div data-rv><h2>Para un equipo de marca o de investigación</h2><p class="lead">La edición Pro da capacidad propia de investigación, con cada resultado trazable hasta su método.</p><a class="lnk" href="#planes">Ver la edición Pro</a></div><div class="pc soft" data-rv>{SOON}<h3>Para negocios pequeños: Lite</h3><p>Autoservicio en pocos pasos, con plantillas y un informe. Todavía no está abierta.</p><a class="lnk" href="#inicio" data-go="espera">Avísenme cuando abra</a></div></section>
 """+cta2('Míralo con tu propio caso','En media hora, con una pieza tuya.')+'</section>'
-_pl=[('Campus','Universidades','Práctica real para tus alumnos, con capacitación.',['Roles de docente y alumno','Plantillas de estudio','Cupo por programa','Co-marca: Aesteros para tu universidad','Capacitación de FRSKO','Soporte con una persona'],'Por programa académico y periodo, semestral o anual.','<a class="btn" href="#inicio" data-go="demo">Pedir una demostración</a>',''),
-('Pro','Agencias y equipos de investigación','Evidencia para recomendar, con tu marca.',['Baterías e informe integrado','Tu marca en informes y archivos','Co-marca en la plataforma','Portal de cliente de solo lectura '+SOON,'Soporte con una persona'],'Por cotización, según equipo y uso.','<a class="btn" href="#inicio" data-go="demo">Pedir una demostración</a>',' hot'),
-('Lite','Negocios pequeños','Entiende cómo ven tu marca, en pocos pasos.',['Autoservicio','Plantillas','Un informe por estudio','Centro de ayuda como soporte'],'Aún sin abrir.','<a class="btn ghost" href="#inicio" data-go="espera">Unirme a la lista de espera</a>',' wait')]
+_pl=[('campus','Campus','Universidades','Práctica real para tus alumnos, con capacitación.',['Roles de docente y alumno','Plantillas de estudio','Cupo por programa','Co-marca: Aesteros para tu universidad','Capacitación de FRSKO','Soporte con una persona'],'Por programa académico y periodo, semestral o anual.','<a class="btn" href="#inicio" data-go="demo">Pedir una demostración</a>',''),
+('pro','Pro','Agencias y equipos de investigación','Evidencia para recomendar, con tu marca.',['Baterías e informe integrado','Tu marca en informes y archivos','Co-marca en la plataforma','Portal de cliente de solo lectura '+SOON,'Soporte con una persona'],'Por cotización, según equipo y uso.','<a class="btn" href="#inicio" data-go="demo">Pedir una demostración</a>',' hot'),
+('lite','Lite','Negocios pequeños','Entiende cómo ven tu marca, en pocos pasos.',['Autoservicio','Plantillas','Un informe por estudio','Centro de ayuda como soporte'],'Aún sin abrir.','<a class="btn ghost" href="#inicio" data-go="espera">Unirme a la lista de espera</a>',' wait')]
 PLA='<section class="view lt" id="v-planes" hidden>'+hero2('Planes','Tres ediciones,<br>un mismo núcleo','Las tres miden igual y dicen igual de dónde viene cada dato. Cambia para quién están pensadas y qué las acompaña.')+f"""
-<div class="plans">{''.join(f'<article class="plan{c}" data-rv><em>{w}</em><h2>{n}</h2><p class="lead">{d}</p>{li(inc)}<p class="how"><b>Cómo se cobra</b>{how}</p>{b}</article>' for n,w,d,inc,how,b,c in _pl)}</div>
-<section class="mb all" data-rv><h2>En las tres, sin excepción</h2><div class="ex3"><div><b>Sellos de evidencia</b><span>Medido, estimado o modelado en cada cifra.</span></div><div><b>Margen de error</b><span>Junto a cada resultado, con aviso si la muestra es chica.</span></div><div><b>Privacidad por defecto</b><span>El video de la cámara no sale del dispositivo de quien participa.</span></div></div></section>
+<div class="plans">{''.join(f'<article class="plan{c}" data-rv><em>{w}</em><div class="edlogo">{ed_logo(ek,"pl_"+ek,24)}</div><h2>{n}</h2><p class="lead">{d}</p>{li(inc)}<p class="how"><b>Cómo se cobra</b>{how}</p>{b}</article>' for ek,n,w,d,inc,how,b,c in _pl)}</div>
+<section class="mb all" data-rv><h2>En las tres, sin excepción</h2><div class="ex3"><div><b class="ex3Title">{ic('terminado','pl_s1',20)}Sellos de evidencia</b><span>Medido, estimado o modelado en cada cifra.</span></div><div><b class="ex3Title">{ic('confianza','pl_s2',20)}Margen de error</b><span>Junto a cada resultado, con aviso si la muestra es chica.</span></div><div><b class="ex3Title">{ic('privacidad','pl_s3',20)}Privacidad por defecto</b><span>El video de la cámara no sale del dispositivo de quien participa.</span></div></div></section>
 <section class="mb faq"><div class="hd" data-rv><h2>Preguntas sobre planes</h2></div><div data-rv><details><summary>¿Por qué no hay precios aquí?</summary><p>Porque dependen del programa, del periodo y del cupo. Te mandamos una cotización después de la demostración.</p></details><details><summary>¿Hay piloto para universidades?</summary><p>Sí. Un semestre con un grupo, sin costo, a cambio de una carta de intención, una fecha de decisión y permiso para contar el caso.</p></details><details><summary>¿Qué pasa si rebaso el cupo?</summary><p>El exceso se cotiza aparte. La plataforma avisa antes de llegar al límite.</p></details><details><summary>¿Puedo tener la plataforma solo con mi marca?</summary><p>Sí, por contrato y en una instancia dedicada. Los sellos y la nota de método se conservan.</p></details></div></section>
 """+cta2('¿Cuál te toca?','Cuéntanos tu caso y te decimos con cuál empezar.','<a class="btn ghost" href="#producto">Ver el producto</a>')+'</section>'
 _bl=[('Aprender el método','Cómo leer un mapa de atención sin engañarte','ocular',1),('Aprender el método','Qué mide en realidad una prueba de asociación implícita','iat',0),('Para dar la clase','Una práctica de neuromarketing para cuatro semanas','informe',0),('Decidir con evidencia','Dos empaques, una decisión: el caso de Brisa','variantes',0),('Lo que no se puede afirmar','Una sonrisa no es una emoción','video',0),('Aprender el método','Margen de error, explicado con una sola gráfica','encuesta',0)]
@@ -184,9 +192,10 @@ _HPAR=[('hq-mide','Qué se va a medir','Depende del estudio, y siempre se te dic
 PARV='<section class="view lt" id="v-participar" data-nav="ayuda" hidden>'+hero2('Centro de ayuda · Voy a participar','Antes de<br>empezar','Lo que conviene saber si te invitaron a un estudio. Se lee en dos minutos.')+'<div class="hq">'+''.join(f'<section id="{i}" data-rv><h2>{t}</h2><p>{d}</p></section>' for i,t,d in _HPAR)+'</div><a class="lnk" href="#ayuda">Volver a la ayuda</a></section>'
 _hp2=[('inv','Investigo o doy clase',[(x,'') for x in ['Primeros pasos: tu primer estudio','Armar un estudio con varias herramientas','Invitar participantes','Cómo leer cada gráfica','Exportar resultados','Crear grupos y repartir códigos']]),('adm','Administro la cuenta',[(x,'') for x in ['Usuarios y permisos','Cupos de alumnos, participantes e IA','Logotipo y portada de tu organización','Privacidad y borrado de datos']]),('par','Voy a participar',[(t,i) for i,t,_ in _HPAR])]
 def _hi(x,go): return f'<a class="hi" href="#participar" data-go="{go}"><b>{x}</b><span>Leer</span></a>' if go else f'<a class="hi wip" href="#ayuda"><b>{x}</b><span>En preparación</span></a>'
-def _htab(i,k,n): return f'<button type="button" role="tab" id="hd-{k}" aria-controls="hp-{k}" aria-selected="{"true" if i==0 else "false"}">{n}</button>'
+_h_ic={'inv':'maestro','adm':'ajustes','par':'participante'}
+def _htab(i,k,n): return f'<button type="button" role="tab" id="hd-{k}" aria-controls="hp-{k}" aria-selected="{"true" if i==0 else "false"}">{ic(_h_ic[k],"hd_"+k,18)}{n}</button>'
 def _hpan(i,k,xs): return f'<div class="hlist" role="tabpanel" id="hp-{k}" aria-labelledby="hd-{k}"'+('' if i==0 else ' hidden')+'>'+''.join(_hi(x,go) for x,go in xs)+'</div>'
-AYU='<section class="view lt" id="v-ayuda" hidden>'+hero2('Centro de ayuda','¿En qué te ayudamos?','','<label class="hsrch" for="h-q"><span class="vh">Buscar en la ayuda</span><input id="h-q" type="search" placeholder="Busca: calibrar, exportar, código de grupo" autocomplete="off"></label>')+'<div class="doors" role="tablist" aria-label="Quién eres">'+''.join(_htab(i,k,n) for i,(k,n,_) in enumerate(_hp2))+'</div>'+''.join(_hpan(i,k,xs) for i,(k,n,xs) in enumerate(_hp2))+"""<p class="hnone" id="h-none" hidden>Nada con esas palabras. Prueba con otra o escríbenos.</p>
+AYU='<section class="view lt" id="v-ayuda" hidden>'+hero2('Centro de ayuda','¿En qué te ayudamos?','','<label class="hsrch" for="h-q">'+ic('buscar','hq_s',20)+'<span class="vh">Buscar en la ayuda</span><input id="h-q" type="search" placeholder="Busca: calibrar, exportar, código de grupo" autocomplete="off"></label>')+'<div class="doors" role="tablist" aria-label="Quién eres">'+''.join(_htab(i,k,n) for i,(k,n,_) in enumerate(_hp2))+'</div>'+''.join(_hpan(i,k,xs) for i,(k,n,xs) in enumerate(_hp2))+"""<p class="hnone" id="h-none" hidden>Nada con esas palabras. Prueba con otra o escríbenos.</p>
 <section class="mb duo"><div data-rv><h2>Si vas a participar, lo esencial</h2><p class="lead">De tu cámara se guardan coordenadas y tiempos, no el video. No das nombre ni correo. Puedes salir cuando quieras.</p><a class="lnk" href="#participar">Leer todo</a></div><div class="pc soft" data-rv><h3>¿No encontraste tu respuesta?</h3><p>Campus y Pro tienen soporte con una persona. El contacto se publica al abrir la plataforma.</p></div></section></section>"""
 def legal(slug,eb,h,sub,secs): return f'<section class="view lt" id="v-{slug}" data-nav="legal" hidden><article class="art leg"><p class="draft">Borrador para revisión legal. Los datos entre corchetes están por definir. No es el texto vigente.</p><span class="eyebrow">{eb}</span><h1>{h}</h1><p class="sub">{sub}</p>'+''.join(f'<h2>{t}</h2>{b}' for t,b in secs)+'<p class="legn">Otros documentos: <a href="#privacidad">Privacidad</a> · <a href="#terminos">Términos</a> · <a href="#camara">Uso de cámara</a></p></article></section>'
 LEG=legal('privacidad','Legal','Aviso de privacidad','Qué datos tratamos, para qué y cómo ejercer tus derechos.',[
@@ -258,19 +267,37 @@ BLO=BLO.replace('<div class="post wip" data-l="Aprender el método" data-rv><spa
 assert 'href="#a-margen"' in BLO
 VIEWS2=UNI+AGE+EMP+PLA+BLO+ARTS+GLO+NOV+AYU+PARV+GGRA+GINI+ENT+LEG
 
-CSS=open('site.css').read()+open('home.css').read(); JS=open('site.js').read()+open('home.js').read().replace('__CURV__',CURV)
+ROOT_DIR=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..'))
+SITE_URL='https://aesteros.com'
+OG_IMG=f'{SITE_URL}/redes/aesteros-portada-facebook-oscuro.jpg'
+
+ROWS=[]
+with open(os.path.join(ROOT_DIR,'buscadores.csv'),encoding='utf-8-sig') as _f:
+    for r in csv.DictReader(_f):
+        v=r['vista'].strip()
+        p=r['direccion'].strip()
+        if not p.startswith('/'): p='/'+v
+        u=SITE_URL+('' if p=='/' else p)
+        ROWS.append({'v':v,'p':p,'u':u,'t':r['titulo'].strip(),'d':r['descripcion'].strip()})
+META_MAP={r['v']:{'p':r['p'],'u':r['u'],'t':r['t'],'d':r['d']} for r in ROWS}
+P2V_MAP={r['p']:r['v'] for r in ROWS}
+
+CSS=open('site.css').read()+open('home.css').read()
+JS='window.__AE_META__='+json.dumps(META_MAP,ensure_ascii=False)+';window.__AE_P2V__='+json.dumps(P2V_MAP,ensure_ascii=False)+';\n'+open('site.js').read()+open('home.js').read().replace('__CURV__',CURV)
+
 html=f'''<!DOCTYPE html>
-<html lang="es" data-view="inicio">
+<html lang="es" data-view="inicio" data-mode="main">
 <head>
 <meta charset="utf-8">
+<base href="/">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sitio de Aesteros</title>
+<!--__SEO_HEAD__-->
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 </head>
 <body>
 <a class="skip" href="#contenido">Ir al contenido</a>
-<header class="dock"><a class="brand" href="#inicio" aria-label="Aesteros, inicio">{logo("n",18)}</a><nav class="n1" aria-label="Principal"><i class="pil" aria-hidden="true"></i><a href="#inicio" data-v="inicio">Inicio</a><a href="#producto" data-v="producto">Producto</a><a href="#metodo" data-v="metodo">Método</a></nav><nav class="n2" aria-label="Explorar"><i class="pil" aria-hidden="true"></i><a class="bk" href="#inicio"><span aria-hidden="true">‹</span> Inicio</a><a href="#universidades" data-v="universidades">Universidades</a><a href="#agencias" data-v="agencias">Agencias</a><a href="#empresas" data-v="empresas">Empresas</a><a href="#planes" data-v="planes">Planes</a><a href="#blog" data-v="blog">Blog</a><a href="#ayuda" data-v="ayuda">Ayuda</a></nav><button type="button" class="more" id="more" aria-expanded="false" aria-controls="sheet" aria-label="Explorar más páginas"><i aria-hidden="true"></i><span aria-hidden="true">Explorar</span></button><button type="button" class="snd" id="snd" aria-pressed="false" aria-label="Sonido"><i aria-hidden="true"></i><span>Sonido</span></button><a class="btn sm" href="#inicio" data-go="demo"><span class="w">Demostración</span><span class="n">Demo</span></a></header><div class="sheet" id="sheet" hidden><div class="shg mob"><em>El sitio</em><a class="m1" href="#inicio">Inicio</a><a class="m1" href="#producto">Producto</a><a href="#metodo">Método</a></div><div class="shg"><em>Para ti</em><a href="#universidades">Universidades</a><a href="#agencias">Agencias</a><a href="#empresas">Empresas</a></div><div class="shg"><em>Comprar</em><a href="#planes">Planes</a><a href="#novedades">Novedades</a></div><div class="shg"><em>Aprender</em><a href="#blog">Blog</a><a href="#ayuda">Centro de ayuda</a></div><div class="shg end"><a class="entb" href="#entrar" aria-label="Entrar a Aesteros"><span>Entrar a</span>{logo("sh",20)}</a></div></div><span class="cur" id="cur" aria-hidden="true"></span>
+<header class="dock"><a class="brand" href="#inicio" aria-label="Aesteros, inicio">{logo("n",18)}</a><nav class="n1" aria-label="Principal"><i class="pil" aria-hidden="true"></i><a href="#inicio" data-v="inicio">Inicio</a><a href="#producto" data-v="producto">Producto</a><a href="#metodo" data-v="metodo">Método</a></nav><nav class="n2" aria-label="Explorar"><i class="pil" aria-hidden="true"></i><a class="bk" href="#inicio"><span aria-hidden="true">‹</span> Inicio</a><a href="#universidades" data-v="universidades">Universidades</a><a href="#agencias" data-v="agencias">Agencias</a><a href="#empresas" data-v="empresas">Empresas</a><a href="#planes" data-v="planes">Planes</a><a href="#blog" data-v="blog">Blog</a><a href="#ayuda" data-v="ayuda">Ayuda</a></nav><button type="button" class="more" id="more" aria-expanded="false" aria-controls="sheet" aria-label="Explorar más páginas"><i aria-hidden="true"></i><span aria-hidden="true">Explorar</span></button><button type="button" class="snd" id="snd" aria-pressed="false" aria-label="Sonido"><i aria-hidden="true"></i><span>Sonido</span></button><a class="btn sm" href="#inicio" data-go="demo"><span class="w">Demostración</span><span class="n">Demo</span></a></header><div class="sheet" id="sheet" hidden><div class="shg mob"><em>El sitio</em><a class="m1" href="#inicio">{ic("inicio","sh1",18)}Inicio</a><a class="m1" href="#producto">{ic("bateria","sh2",18)}Producto</a><a href="#metodo">{ic("confianza","sh3",18)}Método</a></div><div class="shg"><em>Para ti</em><a href="#universidades">{ic("alumno","sh4",18)}Universidades</a><a href="#agencias">{ic("cliente","sh5",18)}Agencias</a><a href="#empresas">{ic("equipo","sh6",18)}Empresas</a></div><div class="shg"><em>Comprar</em><a href="#planes">{ic("tabla","sh7",18)}Planes</a><a href="#novedades">{ic("notificacion","sh8",18)}Novedades</a></div><div class="shg"><em>Aprender</em><a href="#blog">{ic("informe","sh9",18)}Blog</a><a href="#ayuda">{ic("ayuda","sh10",18)}Centro de ayuda</a></div><div class="shg end"><a class="entb" href="#entrar" aria-label="Entrar a Aesteros"><span>Entrar a</span>{logo("sh",20)}</a></div></div><span class="cur" id="cur" aria-hidden="true"></span>
 <main id="contenido">
 
 <section class="view home" id="v-inicio">
@@ -364,6 +391,174 @@ html=f'''<!DOCTYPE html>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script>{JS}</script>
 </body>
 </html>'''
-for out_p in (os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','sitio','index.html'), os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','index.html')):
-    open(out_p,'w').write(html)
-print(len(html)//1024,'KB',html.count('—')+html.count('–'))
+
+def seo_head(r):
+    v,p,u,t,d = r['v'],r['p'],r['u'],r['t'],r['d']
+    is_art = p.startswith('/blog/')
+    og_type = 'article' if is_art else 'website'
+    rob = 'noindex, nofollow' if v=='entrar' else 'index, follow, max-image-preview:large, max-snippet:-1'
+    graph = [
+        {
+            "@type": "Organization",
+            "@id": f"{SITE_URL}/#organization",
+            "name": "Aesteros",
+            "url": SITE_URL,
+            "slogan": "Percepción, comparada.",
+            "description": "Plataforma de investigación de percepción y neuromarketing en línea con personas reales.",
+            "logo": f"{SITE_URL}/logo/png/aesteros-icono-claro-1024.png"
+        },
+        {
+            "@type": "WebSite",
+            "@id": f"{SITE_URL}/#website",
+            "url": SITE_URL,
+            "name": "Aesteros",
+            "inLanguage": "es-MX",
+            "publisher": {"@id": f"{SITE_URL}/#organization"}
+        },
+        {
+            "@type": "Article" if is_art else "WebPage",
+            "@id": f"{u}#webpage",
+            "url": u,
+            "name": t,
+            "headline": t,
+            "description": d,
+            "inLanguage": "es-MX",
+            "isPartOf": {"@id": f"{SITE_URL}/#website"},
+            "publisher": {"@id": f"{SITE_URL}/#organization"},
+            "image": OG_IMG
+        }
+    ]
+    if v in ('inicio','producto','planes'):
+        graph.append({
+            "@type": "SoftwareApplication",
+            "name": "Aesteros",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web",
+            "inLanguage": "es-MX",
+            "description": d,
+            "url": SITE_URL,
+            "publisher": {"@id": f"{SITE_URL}/#organization"}
+        })
+    ld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
+    return f'''<title>{t}</title>
+<meta name="description" content="{d}">
+<meta name="robots" content="{rob}">
+<link rel="canonical" href="{u}">
+<meta name="theme-color" content="#0B0907" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FFF7E6" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo/png/aesteros-favicon-claro-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logo/png/aesteros-favicon-claro-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/logo/png/aesteros-favicon-oscuro-32.png" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" sizes="180x180" href="/logo/png/aesteros-icono-claro-1024.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="{og_type}">
+<meta property="og:site_name" content="Aesteros">
+<meta property="og:locale" content="es_MX">
+<meta property="og:title" content="{t}">
+<meta property="og:description" content="{d}">
+<meta property="og:url" content="{u}">
+<meta property="og:image" content="{OG_IMG}">
+<meta property="og:image:width" content="1702">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aesteros: Percepción, comparada. De lo difuso a lo nítido.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{t}">
+<meta name="twitter:description" content="{d}">
+<meta name="twitter:image" content="{OG_IMG}">
+<script type="application/ld+json">{ld}</script>'''
+
+def render_for_view(base_html, r):
+    v = r['v']
+    mode = 'main' if v in ('inicio','producto','metodo') else 'mas'
+    h = base_html.replace('<html lang="es" data-view="inicio" data-mode="main">', f'<html lang="es" data-view="{v}" data-mode="{mode}">', 1)
+    h = h.replace('<!--__SEO_HEAD__-->', seo_head(r), 1)
+    if v != 'inicio':
+        h = h.replace('<section class="view home" id="v-inicio">', '<section class="view home" id="v-inicio" hidden>', 1)
+        h = re.sub(rf'(<section class="view [^"]*" id="v-{re.escape(v)}"[^>]*?) hidden>', r'\1>', h, count=1)
+    return h
+
+for r in ROWS:
+    page_html = render_for_view(html, r)
+    rel = r['p'].lstrip('/')
+    for base_dir in (ROOT_DIR, os.path.join(ROOT_DIR,'sitio')):
+        out_p = os.path.join(base_dir, rel, 'index.html') if rel else os.path.join(base_dir, 'index.html')
+        os.makedirs(os.path.dirname(out_p), exist_ok=True)
+        open(out_p, 'w').write(page_html)
+
+# Sitemap.xml
+def _prio(p):
+    if p=='/': return ('weekly','1.0')
+    if p in ('/producto','/metodo','/planes','/universidades','/agencias','/empresas'): return ('weekly','0.9')
+    if p in ('/blog','/ayuda','/novedades','/glosario'): return ('weekly','0.8')
+    if p.startswith('/blog/') or p.startswith('/ayuda/'): return ('monthly','0.7')
+    return ('yearly','0.4')
+
+smap_items=[]
+for r in ROWS:
+    if r['v']=='entrar': continue
+    cf,pr=_prio(r['p'])
+    smap_items.append(f'  <url>\n    <loc>{r["u"]}</loc>\n    <lastmod>2026-11-19</lastmod>\n    <changefreq>{cf}</changefreq>\n    <priority>{pr}</priority>\n  </url>')
+SMAP='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join(smap_items)+'\n</urlset>\n'
+
+ROBOTS=f'''User-agent: *
+Allow: /
+Disallow: /entrar
+
+Sitemap: {SITE_URL}/sitemap.xml
+'''
+
+LLMS_TXT=f'''# Aesteros
+
+> Percepción, comparada. De lo difuso a lo nítido.
+> Aesteros es una plataforma de investigación de percepción y neuromarketing en línea que mide qué miran, qué asocian y qué opinan personas reales sobre un empaque, un anuncio, un video o un sitio web, usando la cámara de su computadora o teléfono. Cada dato lleva su sello de evidencia (Medido, Estimado o Modelado) y su margen de error.
+
+## Tres sellos de evidencia
+- **Medido (punto sólido):** Viene de lo que personas reales miraron, respondieron o tardaron. Incluye cuántas sesiones válidas entraron y cuántas se excluyeron por calidad.
+- **Estimado (punto difuso):** Viene de un modelo de inteligencia artificial. Sirve para descartar versiones rápido, nunca se mezcla con lo medido.
+- **Modelado (punto hueco):** Viene de una simulación estructurada a partir de una rúbrica publicada, siempre con su nota de método.
+
+## Nueve herramientas en un mismo núcleo
+1. **Seguimiento ocular (Medido):** Mapa de atención, recorrido de la mirada e indicadores por área de interés con cámara web o teléfono.
+2. **Video con lectura del rostro (Medido):** Atención segundo a segundo y movimientos faciales observables (sonrisa, ceño, sorpresa).
+3. **Análisis visual con IA (Estimado):** Estimación de atención en cinco capas antes de salir a campo.
+4. **Asociación implícita (Medido):** Tiempo de respuesta (Greenwald, Nosek y Banaji, 2003) con intervalo de confianza por dimensión.
+5. **Variantes implícitas (Medido):** Categoría única (Karpinski y Steinman, 2006), responder o esperar (Nosek y Banaji, 2001) y primado evaluativo (Fazio, 1995).
+6. **Encuestas y precio (Medido):** Escalas validadas de usabilidad (Brooke, 1996), recomendación (Reichheld, 2003), emoción (Bradley y Lang, 1994) y modelos de precio Van Westendorp (1976) y Gabor-Granger (1966).
+7. **Recorrido web (Modelado):** Índice de Fricción Digital por sitio y por tarea frente a la competencia.
+8. **Auditoría SEO (Medido):** Qué impide que los buscadores lean bien un sitio, hallazgos por severidad y plan de acción.
+9. **Baterías e informe (Estimado):** Varias pruebas en una sola liga y un informe que cruza lo declarado con lo asociado.
+
+## Ediciones
+- **Aesteros Campus (Universidades):** Investigación real desde el aula. Licencia por programa académico y periodo, con roles de docente y alumno, plantillas y capacitación de FRSKO.
+- **Aesteros Pro (Agencias y equipos de investigación):** Antes de elegir, compara. Baterías integradas, informes con tu propia marca y co-marca.
+- **Aesteros Lite (Negocios pequeños):** ¿Cuál de los dos? Pregúntale a la percepción. Autoservicio con plantillas (en lista de espera).
+
+## Mapa de páginas públicas
+''' + '\n'.join(f'- [{r["t"]}]({r["u"]}): {r["d"]}' for r in ROWS if r['v']!='entrar') + '\n'
+
+MANIFEST=json.dumps({
+    "name": "Aesteros",
+    "short_name": "Aesteros",
+    "description": META_MAP['inicio']['d'],
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0B0907",
+    "theme_color": "#0B0907",
+    "lang": "es-MX",
+    "icons": [
+        {"src": "/logo/png/aesteros-favicon-claro-32.png", "sizes": "32x32", "type": "image/png"},
+        {"src": "/logo/png/aesteros-favicon-claro-64.png", "sizes": "64x64", "type": "image/png"},
+        {"src": "/logo/png/aesteros-icono-claro-1024.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any maskable"}
+    ]
+}, ensure_ascii=False, indent=2)+'\n'
+
+for base_dir in (ROOT_DIR, os.path.join(ROOT_DIR,'sitio')):
+    open(os.path.join(base_dir,'sitemap.xml'),'w').write(SMAP)
+    open(os.path.join(base_dir,'robots.txt'),'w').write(ROBOTS)
+    open(os.path.join(base_dir,'llms.txt'),'w').write(LLMS_TXT)
+    open(os.path.join(base_dir,'llm.txt'),'w').write(LLMS_TXT)
+    open(os.path.join(base_dir,'site.webmanifest'),'w').write(MANIFEST)
+
+home_out = open(os.path.join(ROOT_DIR,'index.html')).read()
+print(len(home_out)//1024,'KB',home_out.count('—')+home_out.count('–'),f'{len(ROWS)} routes built')
+

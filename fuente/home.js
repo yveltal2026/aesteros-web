@@ -54,8 +54,8 @@ function prog(el){var r=el.getBoundingClientRect(),t=r.height-innerHeight;return
 
 /* ---------- sonido opcional: lo borroso suena filtrado y se abre al enfocar ---------- */
 (function(){
-  var b=$('#snd'),lab=$('span',b),ctx,filt,master,buf={},ready=false,on=false;
-  function load(n){return fetch('snd/'+n+'.mp3').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(a){return new Promise(function(ok,no){ctx.decodeAudioData(a,ok,no)})}).then(function(d){buf[n]=d})}
+  var b=$('#snd'),lab=$('span',b),ctx,filt,master,buf={},ready=false,on=false,BASE=(document.querySelector('base')||{}).href||'';
+  function load(n){return fetch(BASE+'snd/'+n+'.mp3').then(function(r){if(!r.ok)throw 0;return r.arrayBuffer()}).then(function(a){return new Promise(function(ok,no){ctx.decodeAudioData(a,ok,no)})}).then(function(d){buf[n]=d})}
   function play(n,g){if(!on||!buf[n])return;var s=ctx.createBufferSource(),v=ctx.createGain();s.buffer=buf[n];v.gain.value=g||.5;s.connect(v);v.connect(master);s.start()}
   AE.blip=function(n){play(n,.45)};
   AE.tone=function(f){if(on&&filt)filt.frequency.setTargetAtTime(750*Math.pow(24,clamp(f)),ctx.currentTime,.25)};
@@ -159,8 +159,8 @@ if(finePtr&&!reduce){(function(){
   document.addEventListener('click',function(e){if(!sh.hidden&&!e.target.closest('#sheet'))set(false);else if(e.target.closest('#sheet a'))set(false)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!sh.hidden){set(false);mb.focus()}});
   var MAINV=['inicio','producto','metodo',''];
-  function mark(){var v=(location.hash||'#inicio').slice(1);mb.classList.toggle('here',MAINV.indexOf(v)<0);var sec=document.getElementById('v-'+v);v=sec&&sec.dataset.nav||v;$$('#sheet a').forEach(function(a){if(a.getAttribute('href')==='#'+v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
-  addEventListener('hashchange',function(){mark();if(!sh.hidden)set(false)});mark();
+  function mark(){var v=((location.hash||'').slice(1))||root.dataset.view||'inicio';mb.classList.toggle('here',MAINV.indexOf(v)<0);var sec=document.getElementById('v-'+v);v=sec&&sec.dataset.nav||v;$$('#sheet a').forEach(function(a){if(a.getAttribute('href')==='#'+v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+  addEventListener('hashchange',function(){mark();if(!sh.hidden)set(false)});addEventListener('popstate',function(){mark();if(!sh.hidden)set(false)});mark();
   // informe con tu marca
   var rep=$('#rep');$$('.sw button').forEach(function(b){b.addEventListener('click',function(){$$('.sw button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});rep.classList.remove('sw1','sw0');void rep.offsetWidth;rep.classList.add(b.dataset.b==='1'?'sw1':'sw0')})});
   // blog: filtro por línea

@@ -1,0 +1,28 @@
+{
+  "name": "Aesteros",
+  "short_name": "Aesteros",
+  "description": "Mide qué miran, qué asocian y qué opinan de tu empaque, tu anuncio o tu sitio. Cada dato dice de dónde viene y qué tan firme es.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0907",
+  "theme_color": "#0B0907",
+  "lang": "es-MX",
+  "icons": [
+    {
+      "src": "/logo/png/aesteros-favicon-claro-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/png/aesteros-favicon-claro-64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/logo/png/aesteros-icono-claro-1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -505,3 +505,16 @@ html:not(.anim) .wire i:nth-child(1){left:10%}html:not(.anim) .wire i:nth-child(
 html.wait .intro .hero-in *,html.wait .hint{animation-play-state:paused!important}
 html.anim .dock{transition:opacity 1.2s cubic-bezier(.16,.84,.24,1),filter 1.2s cubic-bezier(.16,.84,.24,1)}
 html.wait .dock{opacity:0;filter:blur(12px);pointer-events:none}
+
+/* iconografía oficial del manual (24x24, punto sólido, difuso y hueco) y logos de edición */
+.ic{flex:none;display:inline-block;vertical-align:middle;overflow:visible}
+.shg a:not(.btn){display:flex;align-items:center;gap:11px}
+.doors button{display:inline-flex;align-items:center;justify-content:center;gap:9px}
+.aq .chip{display:inline-flex;align-items:center;gap:12px}
+.ex3Title{display:flex;align-items:center;gap:10px}
+.hsrch{position:relative;display:block}
+.hsrch .ic{position:absolute;left:20px;top:50%;transform:translateY(-50%);pointer-events:none;color:#14110C}
+.hsrch input{padding-left:52px}
+.edlogo{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.edlogo svg{height:24px;width:auto;display:block}
+

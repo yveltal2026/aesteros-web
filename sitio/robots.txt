@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /entrar
+
+Sitemap: https://aesteros.com/sitemap.xml
