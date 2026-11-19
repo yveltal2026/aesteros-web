@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500"><rect width="800" height="500" fill="#12343D"/><circle cx="170" cy="250" r="220" fill="#1B4753"/>
+<g transform="translate(130,50)"><rect x="22" y="0" width="36" height="30" rx="5" fill="#0A2026"/><path d="M14 44 C14 34 22 30 30 30 H50 C58 30 66 34 66 44 L76 120 V370 C76 388 64 400 46 400 H34 C16 400 4 388 4 370 V120 Z" fill="#2E7285"/><rect x="4" y="170" width="72" height="120" fill="#F4F7F8"/><text x="40" y="225" text-anchor="middle" font-family="Epilogue" font-weight="800" font-size="20" fill="#12343D">brisa</text><circle cx="40" cy="258" r="12" fill="#D9E36B"/></g>
+<text x="760" y="70" text-anchor="end" font-family="Epilogue" font-weight="800" font-size="46" fill="#F4F7F8" letter-spacing="-1.5">brisa</text>
+<text font-family="Epilogue" font-weight="700" font-size="40" fill="#F4F7F8" letter-spacing="-1.2"><tspan x="340" y="190">Limón de verdad,</tspan><tspan x="340" y="236">burbuja ligera</tspan></text>
+<rect x="340" y="300" width="200" height="56" rx="28" fill="#D9E36B"/><text x="440" y="335" text-anchor="middle" font-family="Epilogue" font-weight="700" font-size="19" fill="#12343D">Pruébala hoy</text>
+<text x="570" y="338" font-family="Epilogue" font-weight="700" font-size="26" fill="#F4F7F8">$18</text>
+<text x="340" y="468" font-family="Epilogue" font-size="11" fill="#F4F7F8" fill-opacity=".6">Aliméntate sanamente. Anuncio de ejemplo.</text></svg>

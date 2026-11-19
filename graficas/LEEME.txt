@@ -1,0 +1,9 @@
+Gráficas por herramienta de Aesteros
+
+svg/      Una gráfica por archivo, editable. Texto en Epilogue.
+png/      Las mismas a 1536 px de ancho.
+ejemplo/  Anuncio ficticio "brisa" y sus mapas: calor por segundo, niebla y atención estimada.
+
+Reglas: relleno sólido = medido, trama = estimado, contorno = modelado.
+El margen de error se dibuja como banda que se desvanece.
+Todos los datos son de ejemplo.
