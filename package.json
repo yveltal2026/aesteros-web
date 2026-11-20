@@ -1,0 +1,12 @@
+{
+  "name": "aesteros-web",
+  "version": "1.0.0",
+  "description": "Aesteros website with Vercel Web Analytics",
+  "private": true,
+  "scripts": {
+    "analytics": "node inject-analytics.js"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^1.1.1"
+  }
+}
