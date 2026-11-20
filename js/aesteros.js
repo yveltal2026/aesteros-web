@@ -153,7 +153,7 @@ if(finePtr&&!reduce){(function(){
   function initAsk(box){
     var sq=$('.sq',box),st=$('.stage',box),inp=$('input[name="pregunta"]',box),chips=$$('.chip',box),esp=$('input[name="espera"]',box),sbtn=$('button[type="submit"]',box),tm;
     function show(q,fromInput){if(!q)q='Elige una pregunta o escribe la tuya.';sq.textContent=q;sq.classList.remove('foc');st.classList.remove('foc');void sq.offsetWidth;clearTimeout(tm);tm=setTimeout(function(){sq.classList.add('foc');st.classList.add('foc')},fromInput?260:60)}
-    chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});inp.value=c.textContent;show(c.textContent);AE.blip&&AE.blip('foco')})});
+    chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});inp.value=c.textContent;show(c.textContent);AE.blip&&AE.blip('foco');if(innerWidth<=820){var fm=$('.form',box);if(fm)setTimeout(function(){fm.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})},360)}})});
     inp.addEventListener('input',function(){chips.forEach(function(x){x.setAttribute('aria-pressed','false')});show(inp.value.trim(),true)});
     if(st&&inp){st.addEventListener('click',function(){inp.focus()})}
     function syncBtn(){if(sbtn&&esp)sbtn.textContent=esp.checked?'Unirme a la lista de espera':'Pedir una demostración'}
