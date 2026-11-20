@@ -1,4 +1,4 @@
-﻿vista,direccion,titulo,descripcion
+vista,direccion,titulo,descripcion
 inicio,/,"Aesteros: neuromarketing en línea, con personas reales","Mide qué miran, qué asocian y qué opinan de tu empaque, tu anuncio o tu sitio. Cada dato dice de dónde viene y qué tan firme es."
 producto,/producto,Cómo funciona un estudio de neuromarketing en Aesteros,"Sigue un estudio de principio a fin: armar, invitar, medir, leer y decidir. Nueve herramientas en una sola plataforma."
 metodo,/metodo,Método: lo que Aesteros puede decir y lo que no,"Qué mide cada prueba, con qué referencia y hasta dónde llega. El recorrido de un dato, de la cámara al informe."
@@ -22,4 +22,5 @@ guia-inicio,/ayuda/tu-primer-estudio,"Tu primer estudio, en cinco pasos","De sub
 privacidad,/privacidad,Aviso de privacidad de Aesteros,"Qué datos tratamos, para qué y cómo ejercer tus derechos."
 terminos,/terminos,Términos del servicio de Aesteros,Las reglas para usar la plataforma.
 camara,/camara,Cómo usa Aesteros la cámara,El video no sale de tu equipo: solo coordenadas y tiempos. Explicado sin letra chica.
+demo,/demo,"Pedir una demostración de Aesteros","Agenda una demostración de 30 minutos con tu propio caso o únete a la lista de espera de Aesteros."
 entrar,app.aesteros.com,Entrar a Aesteros,"Acceso para docentes, alumnos e investigadores. Sin indexar."

@@ -48,3 +48,4 @@
 - [Aviso de privacidad de Aesteros](https://aesteros.com/privacidad): Qué datos tratamos, para qué y cómo ejercer tus derechos.
 - [Términos del servicio de Aesteros](https://aesteros.com/terminos): Las reglas para usar la plataforma.
 - [Cómo usa Aesteros la cámara](https://aesteros.com/camara): El video no sale de tu equipo: solo coordenadas y tiempos. Explicado sin letra chica.
+- [Pedir una demostración de Aesteros](https://aesteros.com/demo): Agenda una demostración de 30 minutos con tu propio caso o únete a la lista de espera de Aesteros.

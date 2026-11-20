@@ -95,14 +95,34 @@ if(finePtr&&!reduce){(function(){
   var tabs=$$('.ba-tabs [role=tab]');
   function pick(t,f){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');x.tabIndex=on?0:-1;var p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;if(on){p.classList.remove('go');void p.offsetWidth;p.classList.add('go')}});if(f)t.focus()}
   tabs.forEach(function(t,i){t.addEventListener('click',function(){pick(t)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();pick(tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length],true)}})});
-  var sq=$('#sq'),st=$('.stage'),inp=$('#f-preg'),chips=$$('.ask .chip'),esp=$('#f-espera'),sbtn=$('#f-demo button[type="submit"]'),tm;
-  function show(q,fromInput){if(!q)q='Elige una pregunta o escribe la tuya.';sq.textContent=q;sq.classList.remove('foc');st.classList.remove('foc');void sq.offsetWidth;clearTimeout(tm);tm=setTimeout(function(){sq.classList.add('foc');st.classList.add('foc')},fromInput?260:60)}
-  chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});inp.value=c.textContent;show(c.textContent);AE.blip&&AE.blip('foco')})});
-  inp.addEventListener('input',function(){chips.forEach(function(x){x.setAttribute('aria-pressed','false')});show(inp.value.trim(),true)});
-  if(st&&inp){st.addEventListener('click',function(){inp.focus()})}
-  function syncBtn(){if(sbtn&&esp)sbtn.textContent=esp.checked?'Unirme a la lista de espera':'Pedir una demostración'}
-  if(esp){esp.addEventListener('change',syncBtn);syncBtn()}
-  st.classList.add('foc');
+  function initAsk(box){
+    var sq=$('.sq',box),st=$('.stage',box),inp=$('input[name="pregunta"]',box),chips=$$('.chip',box),esp=$('input[name="espera"]',box),sbtn=$('button[type="submit"]',box),tm;
+    function show(q,fromInput){if(!q)q='Elige una pregunta o escribe la tuya.';sq.textContent=q;sq.classList.remove('foc');st.classList.remove('foc');void sq.offsetWidth;clearTimeout(tm);tm=setTimeout(function(){sq.classList.add('foc');st.classList.add('foc')},fromInput?260:60)}
+    chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.setAttribute('aria-pressed',x===c?'true':'false')});inp.value=c.textContent;show(c.textContent);AE.blip&&AE.blip('foco')})});
+    inp.addEventListener('input',function(){chips.forEach(function(x){x.setAttribute('aria-pressed','false')});show(inp.value.trim(),true)});
+    if(st&&inp){st.addEventListener('click',function(){inp.focus()})}
+    function syncBtn(){if(sbtn&&esp)sbtn.textContent=esp.checked?'Unirme a la lista de espera':'Pedir una demostración'}
+    if(esp){esp.addEventListener('change',syncBtn);syncBtn()}
+    st.classList.add('foc');
+  }
+  $$('.ask').forEach(initAsk);
+  AE.fillAsk=function(box,o){
+    if(!box||!o)return;
+    if(o.preg){var p=$('input[name="pregunta"]',box);if(p){p.value=o.preg;p.dispatchEvent(new Event('input',{bubbles:true}))}}
+    if(o.tipo){var r=$('input[name="tipo"][value="'+o.tipo+'"]',box);if(r)r.checked=true}
+    var e=$('input[name="espera"]',box);if(e){e.checked=!!o.espera;e.dispatchEvent(new Event('change'))}
+  };
+  var dlg=$('#demo-dlg'),dx=$('#dlg-x');
+  if(dlg){
+    AE.openDemo=function(o){
+      AE.fillAsk(dlg,o||{});
+      var sh=$('#sheet');if(sh&&!sh.hidden){sh.hidden=true;var mb=$('#more');if(mb)mb.setAttribute('aria-expanded','false')}
+      if(!dlg.open&&dlg.showModal)dlg.showModal();
+      AE.blip&&AE.blip('foco');
+    };
+    if(dx)dx.addEventListener('click',function(){dlg.close()});
+    dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  }
 })();
 
 /* ---------- Producto y Método: función ---------- */
@@ -141,8 +161,9 @@ if(finePtr&&!reduce){(function(){
     sel.forEach(function(b){Q[b.dataset.q].forEach(function(t){if(!seen[t[0]]){seen[t[0]]=1;L.push(t)}})});
     if(!L.length){out.innerHTML='<p class="aempty">Tu estudio aparece aquí.</p>';return}
     var people=L.some(function(t){return t[1]==='con personas'});if(L.length>1)L.push(['Baterías e informe','todo en una liga y una sola lectura']);
-    out.innerHTML='<h3>Tu estudio: '+(L.length>1?(L.length-1)+' herramientas y un informe':'1 herramienta')+'</h3><ul>'+L.map(function(t,i){return '<li style="animation-delay:'+(i*.12)+'s">'+t[0]+'<span>'+t[1]+'</span></li>'}).join('')+'</ul><p class="an2">'+(people?'Cuánta gente hace falta lo calcula la plataforma según el margen de error que aceptes. ':'')+'Cada resultado sale con su sello y su margen de error.</p><a class="btn" href="#inicio" data-go="demo" id="arma-go">Pedir una demostración con este estudio</a>';
-    $('#arma-go').addEventListener('click',function(){var f=$('#f-preg'),tx='Quiero saber: '+sel.map(function(b){return b.textContent.toLowerCase()}).join(', ')+'.';if(f){f.value=tx;f.dispatchEvent(new Event('input',{bubbles:true}))}})}
+    var tx='Quiero saber: '+sel.map(function(b){return b.textContent.toLowerCase()}).join(', ')+'.';
+    out.innerHTML='<h3>Tu estudio: '+(L.length>1?(L.length-1)+' herramientas y un informe':'1 herramienta')+'</h3><ul>'+L.map(function(t,i){return '<li style="animation-delay:'+(i*.12)+'s">'+t[0]+'<span>'+t[1]+'</span></li>'}).join('')+'</ul><p class="an2">'+(people?'Cuánta gente hace falta lo calcula la plataforma según el margen de error que aceptes. ':'')+'Cada resultado sale con su sello y su margen de error.</p><a class="btn" href="#demo" data-go="demo" id="arma-go">Pedir una demostración con este estudio</a>';
+    $('#arma-go').dataset.preg=tx}
   qb.forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true');arma();AE.blip&&AE.blip('foco')})});
   // acordeón: una abierta a la vez
   var ac=$$('.acc');ac.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ac.forEach(function(x){if(x!==d)x.open=false})})});
