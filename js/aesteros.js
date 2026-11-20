@@ -429,3 +429,17 @@ AE.view=function(n){if(n===view&&lastChap>=-1&&AE.on)return;AE.on=1;view=n;if(AE
 AE.view(root.dataset.view||'inicio');
 requestAnimationFrame(frame);
 })();
+
+/* ---------- Vercel Speed Insights ---------- */
+(function(){
+  if(location.protocol==='file:')return;
+  window.si=window.si||function(){(window.siq=window.siq||[]).push(arguments);};
+  if(document.head.querySelector('script[src*="/_vercel/speed-insights/script.js"]'))return;
+  var s=document.createElement('script');
+  s.defer=true;
+  s.src='/_vercel/speed-insights/script.js';
+  s.dataset.sdkn='@vercel/speed-insights';
+  s.dataset.sdkv='2.1.0';
+  document.head.appendChild(s);
+})();
+
