@@ -192,6 +192,7 @@ if(finePtr&&!reduce){(function(){
   AE.pill=place;addEventListener('resize',function(){place(false)});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){place(false)});
   addEventListener('hashchange',function(){requestAnimationFrame(function(){place(true)})});
+  addEventListener('popstate',function(){requestAnimationFrame(function(){place(true)})});
   document.addEventListener('click',function(e){if(e.target.closest('a[href^="#"]'))requestAnimationFrame(function(){requestAnimationFrame(function(){place(true)})})});
   requestAnimationFrame(function(){place(false)});
 })();
