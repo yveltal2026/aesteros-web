@@ -5,6 +5,9 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/hablemos", "destination": "/demo", "permanent": false }
+  ],
   "headers": [
     {
       "source": "/(.*)",

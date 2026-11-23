@@ -8,44 +8,74 @@
 - **Estimado (punto difuso):** Viene de un modelo de inteligencia artificial. Sirve para descartar versiones rápido, nunca se mezcla con lo medido.
 - **Modelado (punto hueco):** Viene de una simulación estructurada a partir de una rúbrica publicada, siempre con su nota de método.
 
-## Nueve herramientas en un mismo núcleo
+## Ocho herramientas en un mismo núcleo
 1. **Seguimiento ocular (Medido):** Mapa de atención, recorrido de la mirada e indicadores por área de interés con cámara web o teléfono.
-2. **Video con lectura del rostro (Medido):** Atención segundo a segundo y movimientos faciales observables (sonrisa, ceño, sorpresa).
-3. **Análisis visual con IA (Estimado):** Estimación de atención en cinco capas antes de salir a campo.
-4. **Asociación implícita (Medido):** Tiempo de respuesta (Greenwald, Nosek y Banaji, 2003) con intervalo de confianza por dimensión.
-5. **Variantes implícitas (Medido):** Categoría única (Karpinski y Steinman, 2006), responder o esperar (Nosek y Banaji, 2001) y primado evaluativo (Fazio, 1995).
-6. **Encuestas y precio (Medido):** Escalas validadas de usabilidad (Brooke, 1996), recomendación (Reichheld, 2003), emoción (Bradley y Lang, 1994) y modelos de precio Van Westendorp (1976) y Gabor-Granger (1966).
-7. **Recorrido web (Modelado):** Índice de Fricción Digital por sitio y por tarea frente a la competencia.
-8. **Auditoría SEO (Medido):** Qué impide que los buscadores lean bien un sitio, hallazgos por severidad y plan de acción.
-9. **Baterías e informe (Estimado):** Varias pruebas en una sola liga y un informe que cruza lo declarado con lo asociado.
+2. **Análisis visual con IA (Estimado):** Estimación de atención en cinco capas antes de salir a campo.
+3. **Asociación implícita (Medido):** Tiempo de respuesta (Greenwald, Nosek y Banaji, 2003) con intervalo de confianza por dimensión.
+4. **Variantes implícitas (Medido):** Categoría única (Karpinski y Steinman, 2006), responder o esperar (Nosek y Banaji, 2001) y primado evaluativo (Fazio, 1995).
+5. **Encuestas y precio (Medido):** Escalas validadas de usabilidad (Brooke, 1996), recomendación (Reichheld, 2003), emoción (Bradley y Lang, 1994) y modelos de precio Van Westendorp (1976) y Gabor-Granger (1966).
+6. **Recorrido web (Modelado):** Índice de Fricción Digital por sitio y por tarea frente a la competencia.
+7. **Auditoría SEO (Medido):** Qué impide que los buscadores lean bien un sitio, hallazgos por severidad y plan de acción.
+8. **Baterías e informe (Estimado):** Varias pruebas en una sola liga y un informe que cruza lo declarado con lo asociado.
+
+## En desarrollo
+- **Video con lectura del rostro:** módulo opcional. Se abre cuando termine su revisión legal.
 
 ## Ediciones
-- **Aesteros Campus (Universidades):** Investigación real desde el aula. Licencia por programa académico y periodo, con roles de docente y alumno, plantillas y capacitación de FRSKO.
-- **Aesteros Pro (Agencias y equipos de investigación):** Antes de elegir, compara. Baterías integradas, informes con tu propia marca y co-marca.
-- **Aesteros Lite (Negocios pequeños):** ¿Cuál de los dos? Pregúntale a la percepción. Autoservicio con plantillas (en lista de espera).
+- **Aesteros Campus (Universidades):** Investigación real desde el aula. Licencia por programa académico y periodo, con roles de docente y alumno, plantillas y capacitación con especialistas de Aesteros.
+- **Aesteros Pro (Agencias y equipos de investigación):** Antes de elegir, compara. Una sola edición para agencias y para empresas, con las mismas herramientas. Baterías integradas e informes con tu propia marca.
+- **Aesteros Lite (Negocios pequeños):** ¿Cuál de los dos? Pregúntale a la percepción. Autoservicio para comparar dos versiones, con cuatro plantillas y un informe de una página (en lista de espera).
 
 ## Mapa de páginas públicas
 - [Aesteros: neuromarketing en línea, con personas reales](https://aesteros.com): Mide qué miran, qué asocian y qué opinan de tu empaque, tu anuncio o tu sitio. Cada dato dice de dónde viene y qué tan firme es.
-- [Cómo funciona un estudio de neuromarketing en Aesteros](https://aesteros.com/producto): Sigue un estudio de principio a fin: armar, invitar, medir, leer y decidir. Nueve herramientas en una sola plataforma.
+- [Cómo funciona un estudio de neuromarketing en Aesteros](https://aesteros.com/producto): Sigue un estudio de principio a fin: armar, invitar, medir, leer y decidir. Todas las herramientas en una sola plataforma.
 - [Método: lo que Aesteros puede decir y lo que no](https://aesteros.com/metodo): Qué mide cada prueba, con qué referencia y hasta dónde llega. El recorrido de un dato, de la cámara al informe.
 - [Laboratorio de neuromarketing para universidades](https://aesteros.com/universidades): Tus alumnos diseñan un estudio, lo aplican con personas reales y leen sus resultados en un semestre. Sin comprar equipo.
 - [Pruebas de creatividad para agencias, con evidencia](https://aesteros.com/agencias): Prueba tus rutas creativas con el público del cliente y presenta con datos. Informes con tu marca.
 - [Prueba tu empaque, anuncio o precio antes de producir](https://aesteros.com/empresas): Sabe cuál versión funciona con personas reales: qué se ve, qué se asocia y cuánto pagarían.
+- [Aesteros Lite: ¿cuál de los dos? Compara dos versiones](https://aesteros.com/lite): Sube dos versiones de tu empaque, anuncio o nombre y sabe cuál funciona mejor. Tres pasos y un informe. En lista de espera.
 - [Planes de Aesteros: Campus, Pro y Lite](https://aesteros.com/planes): Tres ediciones sobre un mismo núcleo. Qué incluye cada una y cómo se cobra. Pide tu cotización.
-- [Novedades de Aesteros](https://aesteros.com/novedades): Las herramientas disponibles y las que vienen. Cada lanzamiento se anuncia aquí.
+- [Pide una demostración de Aesteros](https://aesteros.com/demo): Elige tu edición: demostración para universidades, para agencias y empresas, o lista de espera de Lite.
+- [Seguridad y datos en Aesteros, para quien aprueba](https://aesteros.com/seguridad): Qué se guarda y qué no, quién puede ver qué y qué hace la IA con los datos. Para sistemas, compras y jurídico.
+- [Quiénes somos: Aesteros, percepción comparada](https://aesteros.com/nosotros): De dónde viene el nombre, por qué existe la plataforma y los tres principios con los que trabaja.
+- [Preguntas frecuentes sobre Aesteros](https://aesteros.com/preguntas): Cámara, participantes, datos y compra: lo que se pregunta antes de empezar, en respuestas cortas.
 - [Blog de Aesteros: leer la percepción, con calma](https://aesteros.com/blog): Método, práctica de clase y casos de neuromarketing, escritos para entenderse sin formación técnica.
 - [Cómo leer un mapa de atención sin engañarte](https://aesteros.com/blog/como-leer-un-mapa-de-atencion): Tres preguntas antes de creerle a un mapa de calor: cuánta gente hay detrás, qué tan grande es el área y si mirar es entender.
 - [Qué mide una prueba de asociación implícita](https://aesteros.com/blog/que-mide-una-prueba-de-asociacion-implicita): No mide lo que la gente opina de tu marca: mide qué tan rápido la une con una idea. Qué dice, qué no dice y cómo usarla.
 - [Una práctica de neuromarketing para cuatro semanas](https://aesteros.com/blog/practica-de-neuromarketing-cuatro-semanas): Un guion para que cada equipo pase de una pregunta a una conclusión con datos propios, sin laboratorio.
 - [Un anuncio, tres medidas: el caso de Brisa](https://aesteros.com/blog/caso-brisa-un-anuncio-tres-medidas): Un caso de ejemplo: cómo el seguimiento ocular, la asociación implícita y las preguntas de precio cambian una decisión.
 - [Una sonrisa no es una emoción](https://aesteros.com/blog/una-sonrisa-no-es-una-emocion): La cámara dice qué hizo una cara en cada segundo, no qué sintió la persona. Para qué sirve y cómo leerlo.
-- [Margen de error, explicado con una sola gráfica](https://aesteros.com/blog/margen-de-error-con-una-grafica): Todo resultado es una cifra y una franja. Cómo leer la franja y qué significa que toque el cero.
-- [Glosario de neuromarketing en español llano](https://aesteros.com/glosario): Área de interés, intervalo de confianza, mapa de atención y más términos, explicados en una o dos frases.
+- [Margen de error, explicado con una sola gráfica](https://aesteros.com/blog/margen-de-error-con-una-grafica): Todo resultado es una cifra y una franja. Cómo leerla y qué hacer cuando toca el cero.
+- [Cuánta gente necesitas para un estudio](https://aesteros.com/blog/cuanta-gente-necesitas-para-un-estudio): Depende de qué tan fina es la diferencia que quieres ver. Una tabla sencilla para decidir.
+- [Cómo elegir entre dos versiones sin engañarte](https://aesteros.com/blog/como-elegir-entre-dos-versiones): Tres reglas para una comparación que aguante: cambia una sola cosa, decide antes qué es ganar y respeta el empate.
+- [Antes de presentar dos rutas creativas, pruébalas](https://aesteros.com/blog/probar-dos-rutas-creativas): Qué medir con dos bocetos y cómo contarlo en la junta sin prometer de más.
+- [Qué puede decir un mapa de atención hecho con IA](https://aesteros.com/blog/mapa-de-atencion-con-ia): Es rápido y útil para descartar. No es lo que miró la gente. Cómo distinguirlo.
+- [Cómo calificar una práctica cuando el resultado sale mal](https://aesteros.com/blog/calificar-una-practica-de-investigacion): Un estudio que no encuentra diferencia puede ser el mejor trabajo del grupo. Una rúbrica de cinco criterios.
+- [Cómo preguntar un precio sin sesgar la respuesta](https://aesteros.com/blog/como-preguntar-un-precio): Cuatro preguntas en lugar de una, y cómo leer el rango de precio aceptable.
+- [Glosario de neuromarketing en español llano](https://aesteros.com/glosario): Veinte términos de los resultados, explicados en una o dos frases.
+- [Novedades de Aesteros: lo que hay y lo que viene](https://aesteros.com/novedades): Qué herramientas están disponibles, cuáles están en desarrollo y qué sigue. Sin fechas prometidas.
 - [Centro de ayuda de Aesteros](https://aesteros.com/ayuda): Guías para quien investiga, quien administra la cuenta y quien participa en un estudio.
 - [Voy a participar en un estudio: lo que conviene saber](https://aesteros.com/ayuda/participar): Qué se mide, qué se guarda de tu cámara, cómo calibrarla y qué hacer si no funciona.
-- [Cómo leer cada gráfica](https://aesteros.com/ayuda/como-leer-cada-grafica): Cinco gráficas de Aesteros: qué mirar primero en cada una y qué no concluir.
-- [Tu primer estudio, en cinco pasos](https://aesteros.com/ayuda/tu-primer-estudio): De subir tu pieza a leer el informe, con una imagen por paso.
+- [Cómo leer cada gráfica de Aesteros](https://aesteros.com/ayuda/como-leer-cada-grafica): Qué mirar primero y qué no concluir en cada tipo de resultado.
+- [Tu primer estudio en Aesteros, en cinco pasos](https://aesteros.com/ayuda/tu-primer-estudio): De la pregunta a la conclusión, con una o dos herramientas.
+- [Las herramientas de Aesteros, una por una](https://aesteros.com/ayuda/herramientas): Cuándo usar cada una, qué necesitas y qué no concluir de su resultado.
+- [Guía del docente: la práctica de principio a fin](https://aesteros.com/ayuda/docente): Cinco momentos de un semestre con Aesteros.
+- [Guía del alumno: tu primer día en Aesteros](https://aesteros.com/ayuda/alumno): Cómo entrar, qué vas a ver y qué entregar.
+- [Armar un estudio con varias herramientas](https://aesteros.com/ayuda/baterias): Cómo juntar pruebas en una sola liga sin cansar a quien responde.
+- [Invitar participantes a un estudio](https://aesteros.com/ayuda/invitar): Una liga para todos y qué revisar mientras llegan las respuestas.
+- [Exportar resultados de un estudio](https://aesteros.com/ayuda/exportar): Qué te puedes llevar y qué nunca sale de la plataforma.
+- [Crear grupos y dar acceso a alumnos](https://aesteros.com/ayuda/grupos): Cómo organizar una materia para que cada equipo trabaje en lo suyo.
+- [Usuarios y permisos](https://aesteros.com/ayuda/usuarios): Quién puede hacer qué dentro de tu organización.
+- [Cupos de alumnos, participantes e IA](https://aesteros.com/ayuda/cupos): Qué incluye tu licencia y qué pasa al acercarte al límite.
+- [Tu logotipo y tu portada en Aesteros](https://aesteros.com/ayuda/marca): Cómo se ve tu organización dentro de la plataforma.
+- [Privacidad y borrado de datos](https://aesteros.com/ayuda/privacidad): Qué se guarda, qué no y cómo se decide cuánto tiempo.
+- [Presentar resultados de investigación a un cliente](https://aesteros.com/ayuda/presentar): Cómo llevar un informe a una junta sin prometer de más.
+- [Leer tu informe de una página](https://aesteros.com/ayuda/informe-lite): Qué dice cada parte del informe de Lite y qué hacer con ella.
 - [Aviso de privacidad de Aesteros](https://aesteros.com/privacidad): Qué datos tratamos, para qué y cómo ejercer tus derechos.
 - [Términos del servicio de Aesteros](https://aesteros.com/terminos): Las reglas para usar la plataforma.
 - [Cómo usa Aesteros la cámara](https://aesteros.com/camara): El video no sale de tu equipo: solo coordenadas y tiempos. Explicado sin letra chica.
-- [Pedir una demostración de Aesteros](https://aesteros.com/demo): Agenda una demostración de 30 minutos con tu propio caso o únete a la lista de espera de Aesteros.
+- [Calculadora de muestra: cuánta gente necesitas](https://aesteros.com/calculadora): Mueve cuánta gente responde y mira cómo cambia el margen de error. Gratis y sin registro.
+- [Informe de ejemplo de Aesteros](https://aesteros.com/informe-de-ejemplo): Un informe completo, con sus tres medidas, su muestra y lo que no se puede afirmar.
+- [Informe de una página de Aesteros Lite](https://aesteros.com/lite/informe-de-ejemplo): Cuál de dos versiones ganó, por cuánto y con qué margen.
+- [Nueve estudios de neuromarketing y cómo se arman](https://aesteros.com/estudios): Probar un empaque, comparar dos anuncios, encontrar el precio: con qué herramientas se hace cada uno.
+- [Kit del docente de Aesteros](https://aesteros.com/universidades/kit): Planeación, rúbrica y hoja para coordinación. Se descarga con cuenta.
