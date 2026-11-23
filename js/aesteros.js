@@ -136,9 +136,6 @@ window.addEventListener('hashchange',function(){if(!el.hidden)close()});
 })();
 
 (function(){var c=document.getElementById('ckp');if(!c)return;var st;try{st=localStorage.getItem('ae-ck')}catch(e){}
-var snd=document.getElementById('snd'),cs=document.getElementById('cks');
-function sy(){if(snd&&cs)cs.setAttribute('aria-pressed',snd.getAttribute('aria-pressed'))}
-if(cs&&snd){cs.addEventListener('click',function(){snd.click();setTimeout(sy,60)});new MutationObserver(sy).observe(snd,{attributes:true,attributeFilter:['aria-pressed']});sy()}
 if(!st)setTimeout(function(){c.hidden=false},5200);
 [].forEach.call(c.querySelectorAll('[data-ck]'),function(b){b.addEventListener('click',function(){try{localStorage.setItem('ae-ck',b.dataset.ck)}catch(e){}c.classList.add('out');setTimeout(function(){c.hidden=true},650)})});
 })();
