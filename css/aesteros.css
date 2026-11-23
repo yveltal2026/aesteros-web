@@ -182,7 +182,7 @@ html.hascur .cur{display:block;position:fixed;left:0;top:0;z-index:30;width:56px
 html.anim .ch{background:none}
 html.anim .ch .pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 html.anim .ch+.ch{margin-top:-100vh;margin-top:-100svh}
-html.anim #c-hero{height:160vh}html.anim #c-mirada{height:280vh}html.anim #c-asocia{height:320vh}html.anim #c-precio{height:280vh}html.anim #c-sellos{height:220vh}
+html.anim #c-hero{height:200vh}html.anim #c-mirada{height:320vh}html.anim #c-asocia{height:360vh}html.anim #c-precio{height:320vh}html.anim #c-sellos{height:260vh}
 html.anim .steps-tx>.st{grid-area:1/1}
 html.anim .hint{display:block}html.anim .mark{display:flex}
 html.anim .words{display:grid;place-items:center;height:clamp(70px,13vh,120px)}html.anim .words span{grid-area:1/1}
@@ -208,7 +208,7 @@ html.anim .intro .pin{padding-top:38vh}
 .dock .brand,.snd span{display:none}.dock .btn .w{display:none}.dock .btn .n{display:inline}.dock nav a{min-height:44px;padding:0 10px;font-size:.84rem}.dock .btn.sm{min-height:44px;padding:0 14px}
 .opt b{font-size:.78rem;top:6px}.hl{font-size:.78rem}.hl b{font-size:.9rem}
 .iat{padding:14px;gap:8px}.res{gap:8px}.ch h2{font-size:2rem}.st{font-size:1.06rem}.cx{gap:10px}.hist{height:130px;margin-top:44px}.side b{font-size:1.15rem}.side i{font-size:.8rem}html.anim .words{height:64px}.words span{font-size:1.4rem}.dn{font-size:2rem}.res span:last-child{font-size:.9rem}.ch .pin{padding-bottom:84px}.rg{font-size:.78rem;top:36px}
-html.anim #c-mirada,html.anim #c-asocia,html.anim #c-precio{height:245vh}
+html.anim #c-hero{height:185vh}html.anim #c-mirada,html.anim #c-precio{height:275vh}html.anim #c-asocia{height:305vh}html.anim #c-sellos{height:235vh}
 }
 @media (max-height:620px) and (min-width:821px){.intro h1{font-size:clamp(2.6rem,1rem + 5.5vw,5.2rem)}.ch h2{font-size:2.4rem}.st{font-size:1.05rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.intro .hero-in *,.hint,.tc.sn svg,.more i,.hint i,.wire i,.edot,.rcard.go{animation:none!important}.sq,.sdot,.ba-c li{transition-duration:.15s!important}}
