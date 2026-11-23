@@ -1,0 +1,54 @@
+﻿vista,ruta,estado,titulo,descripcion
+inicio,/,ruta de Cristian,"Aesteros: neuromarketing en línea, con personas reales","Mide qué miran, qué asocian y qué opinan de tu empaque, tu anuncio o tu sitio. Cada dato dice de dónde viene y qué tan firme es."
+producto,/producto,"ruta de Cristian, título o descripción al día",Cómo funciona un estudio de neuromarketing en Aesteros,"Sigue un estudio de principio a fin: armar, invitar, medir, leer y decidir. Todas las herramientas en una sola plataforma."
+metodo,/metodo,ruta de Cristian,Método: lo que Aesteros puede decir y lo que no,"Qué mide cada prueba, con qué referencia y hasta dónde llega. El recorrido de un dato, de la cámara al informe."
+universidades,/universidades,ruta de Cristian,Laboratorio de neuromarketing para universidades,"Tus alumnos diseñan un estudio, lo aplican con personas reales y leen sus resultados en un semestre. Sin comprar equipo."
+agencias,/agencias,ruta de Cristian,"Pruebas de creatividad para agencias, con evidencia",Prueba tus rutas creativas con el público del cliente y presenta con datos. Informes con tu marca.
+empresas,/empresas,ruta de Cristian,"Prueba tu empaque, anuncio o precio antes de producir","Sabe cuál versión funciona con personas reales: qué se ve, qué se asocia y cuánto pagarían."
+lite,/lite,NUEVA,Aesteros Lite: ¿cuál de los dos? Compara dos versiones,"Sube dos versiones de tu empaque, anuncio o nombre y sabe cuál funciona mejor. Tres pasos y un informe. En lista de espera."
+planes,/planes,ruta de Cristian,"Planes de Aesteros: Campus, Pro y Lite",Tres ediciones sobre un mismo núcleo. Qué incluye cada una y cómo se cobra. Pide tu cotización.
+solicitar,/demo,"ruta de Cristian (/demo), vista nueva «Hablemos»",Pide una demostración de Aesteros,"Elige tu edición: demostración para universidades, para agencias y empresas, o lista de espera de Lite."
+seguridad,/seguridad,NUEVA,"Seguridad y datos en Aesteros, para quien aprueba","Qué se guarda y qué no, quién puede ver qué y qué hace la IA con los datos. Para sistemas, compras y jurídico."
+nosotros,/nosotros,NUEVA,"Quiénes somos: Aesteros, percepción comparada","De dónde viene el nombre, por qué existe la plataforma y los tres principios con los que trabaja."
+preguntas,/preguntas,NUEVA,Preguntas frecuentes sobre Aesteros,"Cámara, participantes, datos y compra: lo que se pregunta antes de empezar, en respuestas cortas."
+blog,/blog,ruta de Cristian,"Blog de Aesteros: leer la percepción, con calma","Método, práctica de clase y casos de neuromarketing, escritos para entenderse sin formación técnica."
+a-mapa,/blog/como-leer-un-mapa-de-atencion,ruta de Cristian,Cómo leer un mapa de atención sin engañarte,"Tres preguntas antes de creerle a un mapa de calor: cuánta gente hay detrás, qué tan grande es el área y si mirar es entender."
+a-asociacion,/blog/que-mide-una-prueba-de-asociacion-implicita,ruta de Cristian,Qué mide una prueba de asociación implícita,"No mide lo que la gente opina de tu marca: mide qué tan rápido la une con una idea. Qué dice, qué no dice y cómo usarla."
+a-practica,/blog/practica-de-neuromarketing-cuatro-semanas,ruta de Cristian,Una práctica de neuromarketing para cuatro semanas,"Un guion para que cada equipo pase de una pregunta a una conclusión con datos propios, sin laboratorio."
+a-brisa,/blog/caso-brisa-un-anuncio-tres-medidas,ruta de Cristian,"Un anuncio, tres medidas: el caso de Brisa","Un caso de ejemplo: cómo el seguimiento ocular, la asociación implícita y las preguntas de precio cambian una decisión."
+a-sonrisa,/blog/una-sonrisa-no-es-una-emocion,ruta de Cristian,Una sonrisa no es una emoción,"La cámara dice qué hizo una cara en cada segundo, no qué sintió la persona. Para qué sirve y cómo leerlo."
+a-margen,/blog/margen-de-error-con-una-grafica,"ruta de Cristian, título o descripción al día","Margen de error, explicado con una sola gráfica",Todo resultado es una cifra y una franja. Cómo leerla y qué hacer cuando toca el cero.
+a-muestra,/blog/cuanta-gente-necesitas-para-un-estudio,NUEVA,Cuánta gente necesitas para un estudio,Depende de qué tan fina es la diferencia que quieres ver. Una tabla sencilla para decidir.
+a-dos,/blog/como-elegir-entre-dos-versiones,NUEVA,Cómo elegir entre dos versiones sin engañarte,"Tres reglas para una comparación que aguante: cambia una sola cosa, decide antes qué es ganar y respeta el empate."
+a-rutas,/blog/probar-dos-rutas-creativas,NUEVA,"Antes de presentar dos rutas creativas, pruébalas",Qué medir con dos bocetos y cómo contarlo en la junta sin prometer de más.
+a-ia,/blog/mapa-de-atencion-con-ia,NUEVA,Qué puede decir un mapa de atención hecho con IA,Es rápido y útil para descartar. No es lo que miró la gente. Cómo distinguirlo.
+a-evaluar,/blog/calificar-una-practica-de-investigacion,NUEVA,Cómo calificar una práctica cuando el resultado sale mal,Un estudio que no encuentra diferencia puede ser el mejor trabajo del grupo. Una rúbrica de cinco criterios.
+a-precio,/blog/como-preguntar-un-precio,NUEVA,Cómo preguntar un precio sin sesgar la respuesta,"Cuatro preguntas en lugar de una, y cómo leer el rango de precio aceptable."
+glosario,/glosario,"ruta de Cristian, título o descripción al día",Glosario de neuromarketing en español llano,"Veinte términos de los resultados, explicados en una o dos frases."
+novedades,/novedades,"ruta de Cristian, título o descripción al día",Novedades de Aesteros: lo que hay y lo que viene,"Qué herramientas están disponibles, cuáles están en desarrollo y qué sigue. Sin fechas prometidas."
+ayuda,/ayuda,ruta de Cristian,Centro de ayuda de Aesteros,"Guías para quien investiga, quien administra la cuenta y quien participa en un estudio."
+participar,/ayuda/participar,ruta de Cristian,Voy a participar en un estudio: lo que conviene saber,"Qué se mide, qué se guarda de tu cámara, cómo calibrarla y qué hacer si no funciona."
+guia-graficas,/ayuda/como-leer-cada-grafica,"ruta de Cristian, título o descripción al día",Cómo leer cada gráfica de Aesteros,Qué mirar primero y qué no concluir en cada tipo de resultado.
+guia-inicio,/ayuda/tu-primer-estudio,"ruta de Cristian, título o descripción al día","Tu primer estudio en Aesteros, en cinco pasos","De la pregunta a la conclusión, con una o dos herramientas."
+guia-herramientas,/ayuda/herramientas,NUEVA,"Las herramientas de Aesteros, una por una","Cuándo usar cada una, qué necesitas y qué no concluir de su resultado."
+guia-docente,/ayuda/docente,NUEVA,Guía del docente: la práctica de principio a fin,Cinco momentos de un semestre con Aesteros.
+guia-alumno,/ayuda/alumno,NUEVA,Guía del alumno: tu primer día en Aesteros,"Cómo entrar, qué vas a ver y qué entregar."
+guia-bateria,/ayuda/baterias,NUEVA,Armar un estudio con varias herramientas,Cómo juntar pruebas en una sola liga sin cansar a quien responde.
+guia-invitar,/ayuda/invitar,NUEVA,Invitar participantes a un estudio,Una liga para todos y qué revisar mientras llegan las respuestas.
+guia-exportar,/ayuda/exportar,NUEVA,Exportar resultados de un estudio,Qué te puedes llevar y qué nunca sale de la plataforma.
+guia-grupos,/ayuda/grupos,NUEVA,Crear grupos y dar acceso a alumnos,Cómo organizar una materia para que cada equipo trabaje en lo suyo.
+guia-usuarios,/ayuda/usuarios,NUEVA,Usuarios y permisos,Quién puede hacer qué dentro de tu organización.
+guia-cupos,/ayuda/cupos,NUEVA,"Cupos de alumnos, participantes e IA",Qué incluye tu licencia y qué pasa al acercarte al límite.
+guia-marca,/ayuda/marca,NUEVA,Tu logotipo y tu portada en Aesteros,Cómo se ve tu organización dentro de la plataforma.
+guia-privacidad,/ayuda/privacidad,NUEVA,Privacidad y borrado de datos,"Qué se guarda, qué no y cómo se decide cuánto tiempo."
+guia-presentar,/ayuda/presentar,NUEVA,Presentar resultados de investigación a un cliente,Cómo llevar un informe a una junta sin prometer de más.
+guia-informe-lite,/ayuda/informe-lite,NUEVA,Leer tu informe de una página,Qué dice cada parte del informe de Lite y qué hacer con ella.
+entrar,/entrar,igual,Entrar a Aesteros,"Acceso para docentes, alumnos e investigadores. Sin indexar."
+privacidad,/privacidad,ruta de Cristian,Aviso de privacidad de Aesteros,"Qué datos tratamos, para qué y cómo ejercer tus derechos."
+terminos,/terminos,ruta de Cristian,Términos del servicio de Aesteros,Las reglas para usar la plataforma.
+camara,/camara,ruta de Cristian,Cómo usa Aesteros la cámara,El video no sale de tu equipo: solo coordenadas y tiempos. Explicado sin letra chica.
+calculadora,/calculadora,NUEVA,Calculadora de muestra: cuánta gente necesitas,Mueve cuánta gente responde y mira cómo cambia el margen de error. Gratis y sin registro.
+informe-pro,/informe-de-ejemplo,NUEVA,Informe de ejemplo de Aesteros,"Un informe completo, con sus tres medidas, su muestra y lo que no se puede afirmar."
+informe-lite,/lite/informe-de-ejemplo,NUEVA,Informe de una página de Aesteros Lite,"Cuál de dos versiones ganó, por cuánto y con qué margen."
+plantillas,/estudios,NUEVA,Nueve estudios de neuromarketing y cómo se arman,"Probar un empaque, comparar dos anuncios, encontrar el precio: con qué herramientas se hace cada uno."
+kit,/universidades/kit,NUEVA,Kit del docente de Aesteros,"Planeación, rúbrica y hoja para coordinación. Se descarga con cuenta."

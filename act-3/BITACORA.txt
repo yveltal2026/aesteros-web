@@ -1,0 +1,35 @@
+css/aesteros.css: fusión a tres bandas, 1 choque(s) resuelto(s) sumando los dos bloques (pub-primero)
+js/aesteros.js: fusión a tres bandas, 1 choque(s) resuelto(s) sumando los dos bloques (hoy-primero)
+css: cuatro reglas al final: la etiqueta de edición del menú convive con los iconos, y el selector de edición de la portada (.form.nx) no hereda la rejilla de dos columnas del formulario de demostración
+rutas: 53 vistas en la tabla (28 nuevas); la vista «demo» de Cristian sale y «solicitar» ocupa /demo
+script: #demo y #hablemos llevan a la vista «solicitar»
+script: CORRECCIÓN, los enlaces con destino dentro de otra página (data-go) ya no vuelven arriba al llegar
+script: la vista de error también sale con noindex
+marcado: iconos del menú desplegable (19; 10 eran de Cristian, el resto son de las entradas nuevas)
+marcado: icono en el chip «mira» (1)
+marcado: icono en el chip «emo» (1)
+marcado: icono en el chip «asoc» (1)
+marcado: icono en el chip «ab» (1)
+marcado: icono en el chip «precio» (1)
+marcado: icono en el chip «sitio» (1)
+marcado: icono en «Laboratorio de calibración» (1)
+marcado: icono en «Calculadora de muestra» (1)
+marcado: icono en «Proyectos y alumnos» (1)
+marcado: icono en «Sellos de evidencia» (1)
+marcado: icono en «Margen de error» (1)
+marcado: icono en «Privacidad por defecto» (1)
+marcado: icono en el buscador de Ayuda (1)
+marcado: icono en la pestaña hd-inv de Ayuda (1)
+marcado: icono en la pestaña hd-adm de Ayuda (1)
+marcado: icono en la pestaña hd-par de Ayuda (1)
+marcado: el botón «Entrar a» lleva a app.aesteros.com/entrar (1)
+marcado: marca fija arriba en teléfono (.mbrand) (1)
+marcado: la pista de la portada es un enlace a «Pruébalo tú» (1)
+marcado: imagen del anuncio con versión de 700 px (1)
+marcado: «Pruébalo tú» se puede usar con el teclado (1)
+marcado: instrucción de «Pruébalo tú» con flechas (1)
+marcado: sello en las tarjetas de herramientas de la portada (8; «Video con lectura del rostro» conserva su etiqueta «En desarrollo»)
+marcado: pie de página con la leyenda de Cristian (1)
+marcado: «(requerido)» en las etiquetas de campos obligatorios (9)
+marcado: GSAP con integridad como lo tiene Cristian, y script externo (quité 2 etiquetas nuestras)
+propuestos: sitemap.xml y llms.txt regenerados con las 52 rutas, en el mismo formato que los publicados

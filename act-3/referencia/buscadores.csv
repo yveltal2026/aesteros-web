@@ -1,0 +1,55 @@
+﻿pagina,direccion,titulo,descripcion,palabra_principal
+Portada,/,"Aesteros: neuromarketing en línea, con personas reales","Mide qué miran, qué asocian y qué opinan de tu empaque, tu anuncio o tu sitio. Cada dato dice de dónde viene y qué tan firme es.",neuromarketing en línea
+Producto,/producto,Cómo funciona un estudio de neuromarketing en Aesteros,"Sigue un estudio de principio a fin: armar, invitar, medir, leer y decidir. Todas las herramientas en una sola plataforma.",plataforma de neuromarketing
+Método,/metodo,Método: lo que Aesteros puede decir y lo que no,"Qué mide cada prueba, con qué referencia y hasta dónde llega. El recorrido de un dato, de la cámara al informe.",método de neuromarketing
+Planes,/planes,"Planes de Aesteros: Campus, Pro y Lite",Tres ediciones sobre un mismo núcleo. Qué incluye cada una y cómo se cobra. Pide tu cotización.,precio plataforma neuromarketing
+Hablemos,/hablemos,Pide una demostración de Aesteros,"Elige tu edición: demostración para universidades, para agencias y empresas, o lista de espera de Lite.",demostración neuromarketing
+Novedades,/novedades,Novedades de Aesteros: lo que hay y lo que viene,"Qué herramientas están disponibles, cuáles están en desarrollo y qué sigue. Sin fechas prometidas.",novedades Aesteros
+Preguntas,/preguntas,Preguntas frecuentes sobre Aesteros,"Cámara, participantes, datos y compra: lo que se pregunta antes de empezar, en respuestas cortas.",preguntas neuromarketing en línea
+Seguridad y datos,/seguridad,"Seguridad y datos en Aesteros, para quien aprueba","Qué se guarda y qué no, quién puede ver qué y qué hace la IA con los datos. Para sistemas, compras y jurídico.",seguridad de datos plataforma de investigación
+Calculadora de muestra,/calculadora,Calculadora de muestra: cuánta gente necesitas,Mueve cuánta gente responde y mira cómo cambia el margen de error. Gratis y sin registro.,calculadora tamaño de muestra
+Informe de ejemplo,/informe-de-ejemplo,Informe de ejemplo de Aesteros,"Un informe completo, con sus tres medidas, su muestra y lo que no se puede afirmar.",ejemplo informe investigación de mercado
+Informe de Lite,/lite/informe-de-ejemplo,Informe de una página de Aesteros Lite,"Cuál de dos versiones ganó, por cuánto y con qué margen.",(apoyo)
+Estudios tipo,/estudios,Nueve estudios de neuromarketing y cómo se arman,"Probar un empaque, comparar dos anuncios, encontrar el precio: con qué herramientas se hace cada uno.",cómo probar un empaque
+Kit del docente,/universidades/kit,Kit del docente de Aesteros,"Planeación, rúbrica y hoja para coordinación. Se descarga con cuenta.",(apoyo)
+Página no encontrada,(cualquier dirección que no exista),No encontramos esa página,,(no indexar)
+Quiénes somos,/nosotros,"Quiénes somos: Aesteros, percepción comparada","De dónde viene el nombre, por qué existe la plataforma y los tres principios con los que trabaja.",Aesteros
+Entrar,app.aesteros.com,Entrar a Aesteros,"Acceso para docentes, alumnos e investigadores.",(no indexar)
+Universidades,/universidades,Laboratorio de neuromarketing para universidades,"Tus alumnos diseñan un estudio, lo aplican con personas reales y leen sus resultados en un semestre. Sin comprar equipo.",laboratorio de neuromarketing universidad
+Agencias,/agencias,"Pruebas de creatividad para agencias, con evidencia",Prueba tus rutas creativas con el público del cliente y presenta con datos. Informes con tu marca.,test de creatividad publicitaria
+Empresas,/empresas,"Prueba tu empaque, anuncio o precio antes de producir","Sabe cuál versión funciona con personas reales: qué se ve, qué se asocia y cuánto pagarían.",test de empaque
+Lite,/lite,Aesteros Lite: ¿cuál de los dos? Compara dos versiones,"Sube dos versiones de tu empaque, anuncio o nombre y sabe cuál funciona mejor. Tres pasos y un informe. En lista de espera.",comparar dos diseños con clientes
+Índice,/blog,"Blog de Aesteros: leer la percepción, con calma","Método, práctica de clase y casos de neuromarketing, escritos para entenderse sin formación técnica.",blog de neuromarketing
+Artículo,/blog/como-leer-un-mapa-de-atencion,Cómo leer un mapa de atención sin engañarte,"Tres preguntas antes de creerle a un mapa de calor: cuánta gente hay detrás, qué tan grande es el área y si mirar es entender.",cómo leer un mapa de calor
+Artículo,/blog/que-mide-una-prueba-de-asociacion-implicita,Qué mide una prueba de asociación implícita,"No mide lo que la gente opina de tu marca: mide qué tan rápido la une con una idea. Qué dice, qué no dice y cómo usarla.",prueba de asociación implícita
+Artículo,/blog/practica-de-neuromarketing-cuatro-semanas,Una práctica de neuromarketing para cuatro semanas,"Un guion para que cada equipo pase de una pregunta a una conclusión con datos propios, sin laboratorio.",práctica de neuromarketing
+Artículo,/blog/caso-brisa-un-anuncio-tres-medidas,"Un anuncio, tres medidas: el caso de Brisa","Un caso de ejemplo: cómo el seguimiento ocular, la asociación implícita y las preguntas de precio cambian una decisión.",caso de neuromarketing
+Artículo,/blog/una-sonrisa-no-es-una-emocion,Una sonrisa no es una emoción,"La cámara dice qué hizo una cara en cada segundo, no qué sintió la persona. Para qué sirve y cómo leerlo.",codificación facial límites
+Artículo,/blog/margen-de-error-explicado,"Margen de error, explicado con una sola gráfica",Todo resultado es una cifra y una franja. Cómo leerla y qué hacer cuando toca el cero.,margen de error explicado
+Artículo,/blog/cuanta-gente-necesitas-para-un-estudio,Cuánta gente necesitas para un estudio,Depende de qué tan fina es la diferencia que quieres ver. Una tabla sencilla para decidir.,tamaño de muestra encuesta
+Artículo,/blog/como-elegir-entre-dos-versiones,Cómo elegir entre dos versiones sin engañarte,"Tres reglas para una comparación que aguante: cambia una sola cosa, decide antes qué es ganar y respeta el empate.",prueba A/B de diseño
+Artículo,/blog/probar-dos-rutas-creativas,"Antes de presentar dos rutas creativas, pruébalas",Qué medir con dos bocetos y cómo contarlo en la junta sin prometer de más.,probar campaña publicitaria antes de lanzar
+Artículo,/blog/mapa-de-atencion-con-ia,Qué puede decir un mapa de atención hecho con IA,Es rápido y útil para descartar. No es lo que miró la gente. Cómo distinguirlo.,mapa de calor con inteligencia artificial
+Artículo,/blog/calificar-una-practica-de-investigacion,Cómo calificar una práctica cuando el resultado sale mal,Un estudio que no encuentra diferencia puede ser el mejor trabajo del grupo. Una rúbrica de cinco criterios.,rúbrica práctica de investigación de mercados
+Artículo,/blog/como-preguntar-un-precio,Cómo preguntar un precio sin sesgar la respuesta,"Cuatro preguntas en lugar de una, y cómo leer el rango de precio aceptable.",cómo saber cuánto pagarían por mi producto
+Glosario,/glosario,Glosario de neuromarketing en español llano,"Veinte términos de los resultados, explicados en una o dos frases.",glosario de neuromarketing
+Centro de ayuda,/ayuda,Centro de ayuda de Aesteros,"Guías para quien investiga, quien administra la cuenta y quien participa en un estudio.",ayuda Aesteros
+Voy a participar,/ayuda/participar,Voy a participar en un estudio: lo que conviene saber,"Qué se mide, qué se guarda de tu cámara, cómo calibrarla y qué hacer si no funciona.",participar en estudio con cámara web
+Primer estudio,/ayuda/primer-estudio,"Tu primer estudio en Aesteros, en cinco pasos","De la pregunta a la conclusión, con una o dos herramientas.",cómo hacer un estudio de neuromarketing
+Las herramientas,/ayuda/herramientas,"Las herramientas de Aesteros, una por una","Cuándo usar cada una, qué necesitas y qué no concluir de su resultado.",herramientas de neuromarketing
+Leer cada gráfica,/ayuda/graficas,Cómo leer cada gráfica de Aesteros,Qué mirar primero y qué no concluir en cada tipo de resultado.,cómo leer resultados de eye tracking
+Varias herramientas,/ayuda/baterias,Armar un estudio con varias herramientas,Cómo juntar pruebas en una sola liga sin cansar a quien responde.,batería de pruebas de investigación
+Invitar,/ayuda/invitar,Invitar participantes a un estudio,Una liga para todos y qué revisar mientras llegan las respuestas.,invitar participantes estudio en línea
+Exportar,/ayuda/exportar,Exportar resultados de un estudio,Qué te puedes llevar y qué nunca sale de la plataforma.,(interna)
+Grupos y accesos,/ayuda/grupos,Crear grupos y dar acceso a alumnos,Cómo organizar una materia para que cada equipo trabaje en lo suyo.,(interna)
+Guía del docente,/ayuda/docente,Guía del docente: la práctica de principio a fin,Cinco momentos de un semestre con Aesteros.,práctica de neuromarketing en clase
+Guía del alumno,/ayuda/alumno,Guía del alumno: tu primer día en Aesteros,"Cómo entrar, qué vas a ver y qué entregar.",(interna)
+Presentar a un cliente,/ayuda/presentar,Presentar resultados de investigación a un cliente,Cómo llevar un informe a una junta sin prometer de más.,presentar resultados de investigación de mercado
+Informe de Lite,/ayuda/informe-lite,Leer tu informe de una página,Qué dice cada parte del informe de Lite y qué hacer con ella.,(interna)
+Usuarios y permisos,/ayuda/usuarios,Usuarios y permisos,Quién puede hacer qué dentro de tu organización.,(interna)
+Cupos,/ayuda/cupos,"Cupos de alumnos, participantes e IA",Qué incluye tu licencia y qué pasa al acercarte al límite.,(interna)
+Logotipo y portada,/ayuda/marca,Tu logotipo y tu portada en Aesteros,Cómo se ve tu organización dentro de la plataforma.,(interna)
+Privacidad y borrado,/ayuda/privacidad,Privacidad y borrado de datos,"Qué se guarda, qué no y cómo se decide cuánto tiempo.",(interna)
+Privacidad,/privacidad,Aviso de privacidad de Aesteros,"Qué datos tratamos, para qué y cómo ejercer tus derechos.",aviso de privacidad Aesteros
+Términos,/terminos,Términos del servicio de Aesteros,Las reglas para usar la plataforma.,términos Aesteros
+Uso de cámara,/camara,Cómo usa Aesteros la cámara,El video no sale de tu equipo: solo coordenadas y tiempos. Explicado sin letra chica.,seguimiento ocular con cámara web privacidad

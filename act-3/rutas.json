@@ -1,0 +1,320 @@
+{
+ "inicio": {
+  "p": "/",
+  "u": "https://aesteros.com",
+  "t": "Aesteros: neuromarketing en línea, con personas reales",
+  "d": "Mide qué miran, qué asocian y qué opinan de tu empaque, tu anuncio o tu sitio. Cada dato dice de dónde viene y qué tan firme es."
+ },
+ "producto": {
+  "p": "/producto",
+  "u": "https://aesteros.com/producto",
+  "t": "Cómo funciona un estudio de neuromarketing en Aesteros",
+  "d": "Sigue un estudio de principio a fin: armar, invitar, medir, leer y decidir. Todas las herramientas en una sola plataforma."
+ },
+ "metodo": {
+  "p": "/metodo",
+  "u": "https://aesteros.com/metodo",
+  "t": "Método: lo que Aesteros puede decir y lo que no",
+  "d": "Qué mide cada prueba, con qué referencia y hasta dónde llega. El recorrido de un dato, de la cámara al informe."
+ },
+ "universidades": {
+  "p": "/universidades",
+  "u": "https://aesteros.com/universidades",
+  "t": "Laboratorio de neuromarketing para universidades",
+  "d": "Tus alumnos diseñan un estudio, lo aplican con personas reales y leen sus resultados en un semestre. Sin comprar equipo."
+ },
+ "agencias": {
+  "p": "/agencias",
+  "u": "https://aesteros.com/agencias",
+  "t": "Pruebas de creatividad para agencias, con evidencia",
+  "d": "Prueba tus rutas creativas con el público del cliente y presenta con datos. Informes con tu marca."
+ },
+ "empresas": {
+  "p": "/empresas",
+  "u": "https://aesteros.com/empresas",
+  "t": "Prueba tu empaque, anuncio o precio antes de producir",
+  "d": "Sabe cuál versión funciona con personas reales: qué se ve, qué se asocia y cuánto pagarían."
+ },
+ "lite": {
+  "p": "/lite",
+  "u": "https://aesteros.com/lite",
+  "t": "Aesteros Lite: ¿cuál de los dos? Compara dos versiones",
+  "d": "Sube dos versiones de tu empaque, anuncio o nombre y sabe cuál funciona mejor. Tres pasos y un informe. En lista de espera."
+ },
+ "planes": {
+  "p": "/planes",
+  "u": "https://aesteros.com/planes",
+  "t": "Planes de Aesteros: Campus, Pro y Lite",
+  "d": "Tres ediciones sobre un mismo núcleo. Qué incluye cada una y cómo se cobra. Pide tu cotización."
+ },
+ "solicitar": {
+  "p": "/demo",
+  "u": "https://aesteros.com/demo",
+  "t": "Pide una demostración de Aesteros",
+  "d": "Elige tu edición: demostración para universidades, para agencias y empresas, o lista de espera de Lite."
+ },
+ "seguridad": {
+  "p": "/seguridad",
+  "u": "https://aesteros.com/seguridad",
+  "t": "Seguridad y datos en Aesteros, para quien aprueba",
+  "d": "Qué se guarda y qué no, quién puede ver qué y qué hace la IA con los datos. Para sistemas, compras y jurídico."
+ },
+ "nosotros": {
+  "p": "/nosotros",
+  "u": "https://aesteros.com/nosotros",
+  "t": "Quiénes somos: Aesteros, percepción comparada",
+  "d": "De dónde viene el nombre, por qué existe la plataforma y los tres principios con los que trabaja."
+ },
+ "preguntas": {
+  "p": "/preguntas",
+  "u": "https://aesteros.com/preguntas",
+  "t": "Preguntas frecuentes sobre Aesteros",
+  "d": "Cámara, participantes, datos y compra: lo que se pregunta antes de empezar, en respuestas cortas."
+ },
+ "blog": {
+  "p": "/blog",
+  "u": "https://aesteros.com/blog",
+  "t": "Blog de Aesteros: leer la percepción, con calma",
+  "d": "Método, práctica de clase y casos de neuromarketing, escritos para entenderse sin formación técnica."
+ },
+ "a-mapa": {
+  "p": "/blog/como-leer-un-mapa-de-atencion",
+  "u": "https://aesteros.com/blog/como-leer-un-mapa-de-atencion",
+  "t": "Cómo leer un mapa de atención sin engañarte",
+  "d": "Tres preguntas antes de creerle a un mapa de calor: cuánta gente hay detrás, qué tan grande es el área y si mirar es entender."
+ },
+ "a-asociacion": {
+  "p": "/blog/que-mide-una-prueba-de-asociacion-implicita",
+  "u": "https://aesteros.com/blog/que-mide-una-prueba-de-asociacion-implicita",
+  "t": "Qué mide una prueba de asociación implícita",
+  "d": "No mide lo que la gente opina de tu marca: mide qué tan rápido la une con una idea. Qué dice, qué no dice y cómo usarla."
+ },
+ "a-practica": {
+  "p": "/blog/practica-de-neuromarketing-cuatro-semanas",
+  "u": "https://aesteros.com/blog/practica-de-neuromarketing-cuatro-semanas",
+  "t": "Una práctica de neuromarketing para cuatro semanas",
+  "d": "Un guion para que cada equipo pase de una pregunta a una conclusión con datos propios, sin laboratorio."
+ },
+ "a-brisa": {
+  "p": "/blog/caso-brisa-un-anuncio-tres-medidas",
+  "u": "https://aesteros.com/blog/caso-brisa-un-anuncio-tres-medidas",
+  "t": "Un anuncio, tres medidas: el caso de Brisa",
+  "d": "Un caso de ejemplo: cómo el seguimiento ocular, la asociación implícita y las preguntas de precio cambian una decisión."
+ },
+ "a-sonrisa": {
+  "p": "/blog/una-sonrisa-no-es-una-emocion",
+  "u": "https://aesteros.com/blog/una-sonrisa-no-es-una-emocion",
+  "t": "Una sonrisa no es una emoción",
+  "d": "La cámara dice qué hizo una cara en cada segundo, no qué sintió la persona. Para qué sirve y cómo leerlo."
+ },
+ "a-margen": {
+  "p": "/blog/margen-de-error-con-una-grafica",
+  "u": "https://aesteros.com/blog/margen-de-error-con-una-grafica",
+  "t": "Margen de error, explicado con una sola gráfica",
+  "d": "Todo resultado es una cifra y una franja. Cómo leerla y qué hacer cuando toca el cero."
+ },
+ "a-muestra": {
+  "p": "/blog/cuanta-gente-necesitas-para-un-estudio",
+  "u": "https://aesteros.com/blog/cuanta-gente-necesitas-para-un-estudio",
+  "t": "Cuánta gente necesitas para un estudio",
+  "d": "Depende de qué tan fina es la diferencia que quieres ver. Una tabla sencilla para decidir."
+ },
+ "a-dos": {
+  "p": "/blog/como-elegir-entre-dos-versiones",
+  "u": "https://aesteros.com/blog/como-elegir-entre-dos-versiones",
+  "t": "Cómo elegir entre dos versiones sin engañarte",
+  "d": "Tres reglas para una comparación que aguante: cambia una sola cosa, decide antes qué es ganar y respeta el empate."
+ },
+ "a-rutas": {
+  "p": "/blog/probar-dos-rutas-creativas",
+  "u": "https://aesteros.com/blog/probar-dos-rutas-creativas",
+  "t": "Antes de presentar dos rutas creativas, pruébalas",
+  "d": "Qué medir con dos bocetos y cómo contarlo en la junta sin prometer de más."
+ },
+ "a-ia": {
+  "p": "/blog/mapa-de-atencion-con-ia",
+  "u": "https://aesteros.com/blog/mapa-de-atencion-con-ia",
+  "t": "Qué puede decir un mapa de atención hecho con IA",
+  "d": "Es rápido y útil para descartar. No es lo que miró la gente. Cómo distinguirlo."
+ },
+ "a-evaluar": {
+  "p": "/blog/calificar-una-practica-de-investigacion",
+  "u": "https://aesteros.com/blog/calificar-una-practica-de-investigacion",
+  "t": "Cómo calificar una práctica cuando el resultado sale mal",
+  "d": "Un estudio que no encuentra diferencia puede ser el mejor trabajo del grupo. Una rúbrica de cinco criterios."
+ },
+ "a-precio": {
+  "p": "/blog/como-preguntar-un-precio",
+  "u": "https://aesteros.com/blog/como-preguntar-un-precio",
+  "t": "Cómo preguntar un precio sin sesgar la respuesta",
+  "d": "Cuatro preguntas en lugar de una, y cómo leer el rango de precio aceptable."
+ },
+ "glosario": {
+  "p": "/glosario",
+  "u": "https://aesteros.com/glosario",
+  "t": "Glosario de neuromarketing en español llano",
+  "d": "Veinte términos de los resultados, explicados en una o dos frases."
+ },
+ "novedades": {
+  "p": "/novedades",
+  "u": "https://aesteros.com/novedades",
+  "t": "Novedades de Aesteros: lo que hay y lo que viene",
+  "d": "Qué herramientas están disponibles, cuáles están en desarrollo y qué sigue. Sin fechas prometidas."
+ },
+ "ayuda": {
+  "p": "/ayuda",
+  "u": "https://aesteros.com/ayuda",
+  "t": "Centro de ayuda de Aesteros",
+  "d": "Guías para quien investiga, quien administra la cuenta y quien participa en un estudio."
+ },
+ "participar": {
+  "p": "/ayuda/participar",
+  "u": "https://aesteros.com/ayuda/participar",
+  "t": "Voy a participar en un estudio: lo que conviene saber",
+  "d": "Qué se mide, qué se guarda de tu cámara, cómo calibrarla y qué hacer si no funciona."
+ },
+ "guia-graficas": {
+  "p": "/ayuda/como-leer-cada-grafica",
+  "u": "https://aesteros.com/ayuda/como-leer-cada-grafica",
+  "t": "Cómo leer cada gráfica de Aesteros",
+  "d": "Qué mirar primero y qué no concluir en cada tipo de resultado."
+ },
+ "guia-inicio": {
+  "p": "/ayuda/tu-primer-estudio",
+  "u": "https://aesteros.com/ayuda/tu-primer-estudio",
+  "t": "Tu primer estudio en Aesteros, en cinco pasos",
+  "d": "De la pregunta a la conclusión, con una o dos herramientas."
+ },
+ "guia-herramientas": {
+  "p": "/ayuda/herramientas",
+  "u": "https://aesteros.com/ayuda/herramientas",
+  "t": "Las herramientas de Aesteros, una por una",
+  "d": "Cuándo usar cada una, qué necesitas y qué no concluir de su resultado."
+ },
+ "guia-docente": {
+  "p": "/ayuda/docente",
+  "u": "https://aesteros.com/ayuda/docente",
+  "t": "Guía del docente: la práctica de principio a fin",
+  "d": "Cinco momentos de un semestre con Aesteros."
+ },
+ "guia-alumno": {
+  "p": "/ayuda/alumno",
+  "u": "https://aesteros.com/ayuda/alumno",
+  "t": "Guía del alumno: tu primer día en Aesteros",
+  "d": "Cómo entrar, qué vas a ver y qué entregar."
+ },
+ "guia-bateria": {
+  "p": "/ayuda/baterias",
+  "u": "https://aesteros.com/ayuda/baterias",
+  "t": "Armar un estudio con varias herramientas",
+  "d": "Cómo juntar pruebas en una sola liga sin cansar a quien responde."
+ },
+ "guia-invitar": {
+  "p": "/ayuda/invitar",
+  "u": "https://aesteros.com/ayuda/invitar",
+  "t": "Invitar participantes a un estudio",
+  "d": "Una liga para todos y qué revisar mientras llegan las respuestas."
+ },
+ "guia-exportar": {
+  "p": "/ayuda/exportar",
+  "u": "https://aesteros.com/ayuda/exportar",
+  "t": "Exportar resultados de un estudio",
+  "d": "Qué te puedes llevar y qué nunca sale de la plataforma."
+ },
+ "guia-grupos": {
+  "p": "/ayuda/grupos",
+  "u": "https://aesteros.com/ayuda/grupos",
+  "t": "Crear grupos y dar acceso a alumnos",
+  "d": "Cómo organizar una materia para que cada equipo trabaje en lo suyo."
+ },
+ "guia-usuarios": {
+  "p": "/ayuda/usuarios",
+  "u": "https://aesteros.com/ayuda/usuarios",
+  "t": "Usuarios y permisos",
+  "d": "Quién puede hacer qué dentro de tu organización."
+ },
+ "guia-cupos": {
+  "p": "/ayuda/cupos",
+  "u": "https://aesteros.com/ayuda/cupos",
+  "t": "Cupos de alumnos, participantes e IA",
+  "d": "Qué incluye tu licencia y qué pasa al acercarte al límite."
+ },
+ "guia-marca": {
+  "p": "/ayuda/marca",
+  "u": "https://aesteros.com/ayuda/marca",
+  "t": "Tu logotipo y tu portada en Aesteros",
+  "d": "Cómo se ve tu organización dentro de la plataforma."
+ },
+ "guia-privacidad": {
+  "p": "/ayuda/privacidad",
+  "u": "https://aesteros.com/ayuda/privacidad",
+  "t": "Privacidad y borrado de datos",
+  "d": "Qué se guarda, qué no y cómo se decide cuánto tiempo."
+ },
+ "guia-presentar": {
+  "p": "/ayuda/presentar",
+  "u": "https://aesteros.com/ayuda/presentar",
+  "t": "Presentar resultados de investigación a un cliente",
+  "d": "Cómo llevar un informe a una junta sin prometer de más."
+ },
+ "guia-informe-lite": {
+  "p": "/ayuda/informe-lite",
+  "u": "https://aesteros.com/ayuda/informe-lite",
+  "t": "Leer tu informe de una página",
+  "d": "Qué dice cada parte del informe de Lite y qué hacer con ella."
+ },
+ "entrar": {
+  "p": "/entrar",
+  "u": "https://aesteros.com/entrar",
+  "t": "Entrar a Aesteros",
+  "d": "Acceso para docentes, alumnos e investigadores. Sin indexar."
+ },
+ "privacidad": {
+  "p": "/privacidad",
+  "u": "https://aesteros.com/privacidad",
+  "t": "Aviso de privacidad de Aesteros",
+  "d": "Qué datos tratamos, para qué y cómo ejercer tus derechos."
+ },
+ "terminos": {
+  "p": "/terminos",
+  "u": "https://aesteros.com/terminos",
+  "t": "Términos del servicio de Aesteros",
+  "d": "Las reglas para usar la plataforma."
+ },
+ "camara": {
+  "p": "/camara",
+  "u": "https://aesteros.com/camara",
+  "t": "Cómo usa Aesteros la cámara",
+  "d": "El video no sale de tu equipo: solo coordenadas y tiempos. Explicado sin letra chica."
+ },
+ "calculadora": {
+  "p": "/calculadora",
+  "u": "https://aesteros.com/calculadora",
+  "t": "Calculadora de muestra: cuánta gente necesitas",
+  "d": "Mueve cuánta gente responde y mira cómo cambia el margen de error. Gratis y sin registro."
+ },
+ "informe-pro": {
+  "p": "/informe-de-ejemplo",
+  "u": "https://aesteros.com/informe-de-ejemplo",
+  "t": "Informe de ejemplo de Aesteros",
+  "d": "Un informe completo, con sus tres medidas, su muestra y lo que no se puede afirmar."
+ },
+ "informe-lite": {
+  "p": "/lite/informe-de-ejemplo",
+  "u": "https://aesteros.com/lite/informe-de-ejemplo",
+  "t": "Informe de una página de Aesteros Lite",
+  "d": "Cuál de dos versiones ganó, por cuánto y con qué margen."
+ },
+ "plantillas": {
+  "p": "/estudios",
+  "u": "https://aesteros.com/estudios",
+  "t": "Nueve estudios de neuromarketing y cómo se arman",
+  "d": "Probar un empaque, comparar dos anuncios, encontrar el precio: con qué herramientas se hace cada uno."
+ },
+ "kit": {
+  "p": "/universidades/kit",
+  "u": "https://aesteros.com/universidades/kit",
+  "t": "Kit del docente de Aesteros",
+  "d": "Planeación, rúbrica y hoja para coordinación. Se descarga con cuenta."
+ }
+}
